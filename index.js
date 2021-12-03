@@ -49,6 +49,9 @@ app.get('/portfolio-details',(req,res)=>{
 })
 //registering projects
 
+app.get('/mentor_form',(req,res)=>{
+     res.render('register_mentor')
+})
 app.post('/register',upload.single('image'),(req,res)=>{
      const user = new newUser()
      formdata  = req.body
