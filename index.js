@@ -74,12 +74,13 @@ app.post('/register',upload.single('image'),(req,res)=>{
           if(!err){
                console.log("Database Saved Succesfully")
                send_Mail(formdata.lead_email)
-               res.send('<br><br><h1 align="center">REGISTERED SUCCESSFULLY !!! CHECK YOUR MAIL-BOX</h1>')
+               res.render("thankyou")
           }
           else
                console.log(err)    
      })
 })
+
 
 //sending mails
 function send_Mail(mailid){
