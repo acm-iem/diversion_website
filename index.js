@@ -9,6 +9,7 @@ const path = require('path')
 
 
 const newUser = mongoose.model('users')
+const newMentor = mongoose.model('mentors')
 
 const port = process.env.PORT || 3000
 
@@ -98,7 +99,65 @@ function send_Mail(mailid){
     const mailOption={
     from:ad_mail,
     to:mailid,
-    subject:'Welcome to Food Art',
+    subject:'Welcome to Diversion',
+    text:'You have registered for Diversion'
+
+    };
+
+    transporter.sendMail(mailOption,(err,result)=>{
+
+    if(err)
+         console.log(err);
+    else
+         console.log('Mail sent successfully!!!');
+    })
+}
+
+app.post('/register-mentor',upload.single('image'),(req,res)=>{
+     const user = new newMentor()
+     formdata  = req.body
+
+     user.mentor_name = formdata.mentor_name
+     user.mentor_email = formdata.mentor_email
+     user.mentor_ph_no = formdata.mentor_ph_no
+     user.image = slno
+     user.mentor_city = formdata.mentor_city
+     user.mentor_country = formdata.mentor_country
+     user.mentor_past_exp = formdata.mentor_past_exp
+     user.project_link = formdata.project_link
+     user.mentor_domain = formdata.mentor_domain
+     user.mentor_status = "NO"
+     // user.lead_num = formdata.lead_num
+     user.mentor_work = formdata.mentor_work
+     user.lead_linkedin = formdata.lead_linkedin
+     user.lead_github = formdata.lead_github
+     user.lead_twitter = formdata.lead_twitter
+     
+
+     user.save((err,data)=>{
+          if(!err){
+               console.log("Database Saved Succesfully")
+               send_Mail_Mentor(formdata.mentor_email)
+               res.render("thankyou")
+          }
+          else
+               console.log(err)    
+     })
+})
+
+function send_Mail_Mentor(mailid){
+    //    console.log(mailid);
+    const transporter=nodemailer.createTransport({
+    service:'hotmail',
+    auth:{
+        user:ad_mail,
+        pass:ad_password
+ }
+    });
+    const mailOption={
+    from:ad_mail,
+    to:mailid,
+    subject:'Welcome to Diversion',
     text:'You have registered for Diversion'
 
     };

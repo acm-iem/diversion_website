@@ -809,6 +809,7 @@ section {
 .team {
   background: #fff;
   padding: 60px 0;
+  border-radius: 1rem;
 }
 .team .member {
   text-align: center;
@@ -816,6 +817,7 @@ section {
   background: #343a40;
   position: relative;
   overflow: hidden;
+  border-radius: 1rem;
 }
 .team .member .member-info {
   opacity: 0;
@@ -1233,11 +1235,13 @@ section {
   color: #fff;
   font-weight: bold;
   line-height: 80px;
+  border-radius: 1.5rem;
 }
 .form-content {
   padding: 5%;
   border: 1px solid #ced4da;
   margin-bottom: 2%;
+  border-radius: 1.5rem;
 }
 .form-control {
   border-radius: 1.5rem;
@@ -1253,4 +1257,5 @@ section {
 }
 .form-control {
   margin: 10px;
+  border-radius: 1.5rem;
 }

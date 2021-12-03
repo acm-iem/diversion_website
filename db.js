@@ -11,5 +11,6 @@ mongoose.connect(URI,{
      console.log(err)
 })
 require('./user.model')
+require('./mentor.model')
 
 
