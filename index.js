@@ -59,6 +59,9 @@ app.get('/leaderboard',(req,res)=>{
 app.get('/mentor_form',(req,res)=>{
      res.render('register_mentor')
 })
+app.get('/guidelines',(req,res)=>{
+     res.render('guidelines')
+})
 app.post('/register',upload.single('image'),(req,res)=>{
      const user = new newUser()
      formdata  = req.body
@@ -104,10 +107,10 @@ function send_Mail(mailid){
           }
      });
 
-     transporter.use("compile",hbs()({
-          viewEngine:"express-handlebars",
-          viewPath:"./email_templates/"
-     }))
+     // transporter.use("compile",hbs()({
+     //      viewEngine:"express-handlebars",
+     //      viewPath:"./views/"
+     // }))
 
 
     const mailOption={
@@ -172,7 +175,7 @@ function send_Mail_Mentor(mailid){
 
      // transporter.use("compile",hbs({
      //      viewEngine:"express-handlebars",
-     //      viewPath:"./email_templates"
+     //      viewPath:"./views"
      // }))
 
     const mailOption={
@@ -198,10 +201,10 @@ function send_Mail_Mentor(mailid){
           Regards,
           TEAM DIVERSION
           `,
-     attachments:[
-          { filename: './brochure.txt' }
-     ]
-     // template:'main
+     // attachments:[
+     //      { filename: 'brochure.txt',path: './brochure.txt' }
+     // ],
+     // template:'main'
      
     };
 
