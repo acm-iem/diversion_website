@@ -16,6 +16,17 @@ const port = process.env.PORT || 3000
 ad_mail = 'diversioniem@outlook.com'
 ad_password = 'souvik@nonetwork666'
 
+const transporter=nodemailer.createTransport({
+    service:'hotmail',
+    auth:{
+        user:ad_mail,
+        pass:ad_password
+     }
+  });
+
+transporter.use("","")
+
+
 //image upload path and name set
 let slno
 const storage = multer.diskStorage({
@@ -93,13 +104,7 @@ app.post('/register',upload.single('image'),(req,res)=>{
 //sending mails
 function send_Mail(mailid){
     //    console.log(mailid);
-    const transporter=nodemailer.createTransport({
-    service:'hotmail',
-    auth:{
-        user:ad_mail,
-        pass:ad_password
- }
-    });
+    
     const mailOption={
     from:ad_mail,
     to:mailid,
@@ -151,13 +156,7 @@ app.post('/register-mentor',upload.single('image'),(req,res)=>{
 
 function send_Mail_Mentor(mailid){
     //    console.log(mailid);
-    const transporter=nodemailer.createTransport({
-    service:'hotmail',
-    auth:{
-        user:ad_mail,
-        pass:ad_password
- }
-    });
+
     const mailOption={
     from:ad_mail,
     to:mailid,

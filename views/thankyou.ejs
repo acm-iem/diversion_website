@@ -74,6 +74,25 @@ html,body {
 }
 </style>
 <body>
+
+     <div class="preloader">
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script>
+      function preloader() {
+        window.addEventListener('load', () => {
+          document.querySelector('.preloader').classList.add('fade-out');
+          setTimeout(() => {
+            document.querySelector('.preloader').style.display = 'none';
+          }, 600);
+        });
+      }
+      preloader();
+    </script>
      <div class="thankyou-page">
     <div class="_header">
         <div class="logo">
