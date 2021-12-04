@@ -39,6 +39,24 @@
     
 </head>
 <body>
+      <div class="preloader">
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script>
+      function preloader() {
+        window.addEventListener('load', () => {
+          document.querySelector('.preloader').classList.add('fade-out');
+          setTimeout(() => {
+            document.querySelector('.preloader').style.display = 'none';
+          }, 600);
+        });
+      }
+      preloader();
+    </script>
      <br><br><br><br><br><br><br>
      <div class="jumbotron text-center">
   <h1 class="display-3">LeaderBoard</h1>
