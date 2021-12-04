@@ -48,6 +48,10 @@ app.get('/register-page',(req,res)=>{
 app.get('/portfolio-details',(req,res)=>{
      res.render('portfolio-details')
 })
+
+app.get('/leaderboard',(req,res)=>{
+     res.render('leaderboard')
+})
 //registering projects
 
 app.get('/mentor_form',(req,res)=>{
