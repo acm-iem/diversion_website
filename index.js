@@ -117,7 +117,25 @@ function send_Mail(mailid){
     from:ad_mail,
     to:mailid,
     subject:'Welcome to Diversion',
-    text:'You have registered for Diversion'
+    text:`Dear ${formdata.lead_name},
+
+We’re delighted to inform you that you’ve filled up the project registration form successfully.
+
+DIVERSION 2022 is an event organized by ACM-CSI IEM Student Chapter which encourages participants to contribute in open-source.Participants can contribute to a  plethora of open-source projects in various fields including AI & ML, App development and Web development.We also have projects based on hardware-related domains like IoT and robotics.
+
+Participants are free to compete with their  own project idea and we would be more than happy to help you achieve that. The only thing that must be in your idea is that it should be scalable so that more participants can work on it. The perks will include swags.
+
+
+Our team is currently reviewing your project application and will be contacting you soon. Stay Tuned!
+
+Let us join hands to celebrate this festival of Open Source contribution in it’s true spirit, in the open source event which lasts longer.
+
+For any further queries, please contact :  acm@iemcal.com
+
+Regards,
+
+TEAM DIVERSION
+`
 
     };
 
