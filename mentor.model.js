@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { string } = require('prop-types') //for  mac users only
+// const { string } = require('prop-types') //for  mac users only
 
 
 const newMentorSchema = new mongoose.Schema({

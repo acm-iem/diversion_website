@@ -1227,7 +1227,6 @@ section {
   }
 }
 
-
 .note {
   text-align: center;
   height: 80px;
@@ -1260,17 +1259,6 @@ section {
   border-radius: 1.5rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 /* *{
@@ -1286,12 +1274,12 @@ section {
 /* body{
   display: flex;
   /* justify-content: center; */
-  /* align-items: center; */
-  /*min-height: 100vh;
+/* align-items: center; */
+/*min-height: 100vh;
   flex-wrap: wrap;
 } */
 
-.card{
+.card {
   min-height: 475px;
   width: 275px;
   margin: 3rem;
@@ -1299,7 +1287,7 @@ section {
   background: #eb5d1e;
 }
 
-.card .header{
+.card .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1307,11 +1295,11 @@ section {
   color: #ddd;
 }
 
-.card .header .title{
+.card .header .title {
   font-weight: 300;
 }
 
-.one .sort{
+.one .sort {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1319,23 +1307,23 @@ section {
   font-size: 14.1px;
 }
 
-.one .sort .day{
+.one .sort .day {
   padding: 0.4rem 1.2rem;
   margin: 0 0.1rem;
   cursor: pointer;
 }
 
 .one .sort .day.active,
-.one .sort .day:active{
+.one .sort .day:active {
   background: rgba(255, 232, 210, 0.308);
   border-radius: 25px;
 }
 
-::selection{
+::selection {
   background: rgba(255, 232, 210, 0.308);
 }
 
-.photo{
+.photo {
   width: 75px;
   background: rgb(64, 107, 199);
   border-radius: 50%;
@@ -1344,18 +1332,18 @@ section {
   margin: 1rem 0;
 }
 
-.main{
+.main {
   width: 85px;
 }
 
-.profile{
+.profile {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
 }
 
-.profile .person{
+.profile .person {
   display: flex;
   margin: 1rem 0;
   justify-content: center;
@@ -1363,57 +1351,57 @@ section {
   flex-direction: column;
 }
 
-.profile .person.first{
+.profile .person.first {
   z-index: 10;
   transform: translateY(-10%);
 }
 
-.first .fa-crown{
+.first .fa-crown {
   color: gold;
   filter: drop-shadow(0px 0px 5px gold);
 }
 
-.num{
+.num {
   color: rgb(64, 107, 199);
 }
 
-.fa-caret-up{
+.fa-caret-up {
   color: rgb(77, 52, 33);
   font-size: 21px;
 }
 
-.link{
+.link {
   margin: 0.2rem 0;
   color: rgb(64, 107, 199);
   margin-top: -0.3rem;
   font-size: 13px;
 }
 
-.points{
+.points {
   color: rgb(77, 52, 33);
   font-size: 17px;
 }
 
-.second{
+.second {
   margin-right: -0.7rem !important;
 }
 
-.third{
+.third {
   margin-left: -0.7rem !important;
 }
 
-.p_img{
+.p_img {
   width: 50px;
   background: rgb(64, 107, 199);
   border-radius: 50%;
 }
 
-.flex{
+.flex {
   display: flex;
   align-items: center;
 }
 
-.others{
+.others {
   display: flex;
   width: 100%;
   margin-top: 1rem;
@@ -1421,7 +1409,7 @@ section {
   justify-content: center;
 }
 
-.info{
+.info {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1429,26 +1417,74 @@ section {
   background: rgba(255, 232, 210, 0.308);
 }
 
-.info .points{
+.info .points {
   margin-left: 0.2rem;
   margin-right: 1.2rem;
 }
 
-.info .link{
+.info .link {
   margin: 0 1rem;
 }
 
-.rank{
+.rank {
   display: flex;
   align-items: center;
   margin: 0 1rem;
   flex-direction: column-reverse;
 }
 
-.rank i{
+.rank i {
   margin-top: -5px !important;
 }
 
-.rank .num{
-  margin: 0 !important; 
+.rank .num {
+  margin: 0 !important;
+}
+
+/* preloader */
+
+/* preloader */
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1500;
+  background-color: #eff0f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.preloader.fade-out {
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+.preloader .box {
+  width: 65px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.preloader .box div {
+  height: 15px;
+  width: 15px;
+  background-color: #eb5d1e;
+  border-radius: 50%;
+  animation: loader 1s ease infinite;
+}
+.preloader .box div:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.preloader .box div:nth-child(3) {
+  animation-delay: 0.1s;
+}
+@keyframes loader {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
 }

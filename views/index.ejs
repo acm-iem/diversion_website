@@ -24,15 +24,17 @@
       href="/assets/vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="/assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <link
       href="/assets/vendor/glightbox/css/glightbox.min.css"
       rel="stylesheet"
     />
     <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
-
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
 
     <!-- Template Main CSS File -->
     <link href="/assets/css/style.css" rel="stylesheet" />
@@ -44,18 +46,41 @@
         margin-top: 1.2rem;
         padding: 10px 60px;
         opacity: 0.8;
-
       }
     </style>
   </head>
 
   <body>
+    <div class="preloader">
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script>
+      function preloader() {
+        window.addEventListener('load', () => {
+          document.querySelector('.preloader').classList.add('fade-out');
+          setTimeout(() => {
+            document.querySelector('.preloader').style.display = 'none';
+          }, 600);
+        });
+      }
+      preloader();
+    </script>
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
       <div class="container d-flex align-items-center justify-content-between">
         <div class="logo">
           <h1 class="text-light">
-            <a href="/"> <img src="/assets/img/TheD.png" alt="Diversion" id="logo-img"><span>Diversion</span></a>
+            <a href="/">
+              <img
+                src="/assets/img/TheD.png"
+                alt="Diversion"
+                id="logo-img"
+              /><span>Diversion</span></a
+            >
           </h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -69,8 +94,6 @@
             <li>
               <a class="nav-link scrollto" href="#portfolio">Projects</a>
             </li>
-
-
 
             <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li>
             <li class="dropdown">
@@ -98,8 +121,6 @@
               </ul>
             </li>
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-
-
 
             <li>
               <a class="getstarted scrollto" href="/register-page">Register</a>
@@ -130,7 +151,9 @@
               We are team of talented designers making websites with Bootstrap
             </h2>
             <div>
-              <a href="/register-page" class="btn-get-started scrollto">Register</a>
+              <a href="/register-page" class="btn-get-started scrollto"
+                >Register</a
+              >
             </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img">
@@ -169,21 +192,27 @@
             <div class="col-lg-6 pt-5 pt-lg-0">
               <h3 data-aos="fade-up">Diversion Major tracks</h3>
               <p data-aos="fade-up" data-aos-delay="100">
-                In DIVERSION 2022, you can contribute to projects on Web development, App development, artificial intelligence- machine learning and IoT Hardware.
+                In DIVERSION 2022, you can contribute to projects on Web
+                development, App development, artificial intelligence- machine
+                learning and IoT Hardware.
               </p>
               <div class="row">
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                   <i class="bx bx-receipt"></i>
                   <h4>Open source Projects</h4>
                   <p>
-                    DIVERSION 2022 welcomes you to the world of open-sourcing with engaging sessions and the opportunity to showcase your projects. Contribute and collaborate on unique and innovative projects.
+                    DIVERSION 2022 welcomes you to the world of open-sourcing
+                    with engaging sessions and the opportunity to showcase your
+                    projects. Contribute and collaborate on unique and
+                    innovative projects.
                   </p>
                 </div>
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                   <i class="bx bx-cube-alt"></i>
                   <h4>IoT/Robotics</h4>
                   <p>
-                    DIVERSION 2022 also gives the opportunity to work on hardware-related domains like IoT and robotics.
+                    DIVERSION 2022 also gives the opportunity to work on
+                    hardware-related domains like IoT and robotics.
                   </p>
                 </div>
               </div>
@@ -211,7 +240,10 @@
                 <div class="icon"><i class="bx bx-world"></i></div>
                 <h4 class="title"><a href="">Web Dev</a></h4>
                 <p class="description">
-                  Web development is the building and maintenance of websites; it’s the work that happens behind the scenes to make a website look great, work fast and perform well with a seamless user experience.
+                  Web development is the building and maintenance of websites;
+                  it’s the work that happens behind the scenes to make a website
+                  look great, work fast and perform well with a seamless user
+                  experience.
                 </p>
               </div>
             </div>
@@ -225,7 +257,9 @@
                 <div class="icon"><i class="bx bx-file"></i></div>
                 <h4 class="title"><a href="">App Dev</a></h4>
                 <p class="description">
-                  App development is the process of creating software applications. It includes user interface design, programming, testing and deployment of the application.
+                  App development is the process of creating software
+                  applications. It includes user interface design, programming,
+                  testing and deployment of the application.
                 </p>
               </div>
             </div>
@@ -239,7 +273,10 @@
                 <div class="icon"><i class="bx bx-tachometer"></i></div>
                 <h4 class="title"><a href="">Ai-ML</a></h4>
                 <p class="description">
-                 Artificial intelligence and machine learning involves the usage of complex algorithms that automatically learn and refine the learning from a vast amount of data and data patterns.
+                  Artificial intelligence and machine learning involves the
+                  usage of complex algorithms that automatically learn and
+                  refine the learning from a vast amount of data and data
+                  patterns.
                 </p>
               </div>
             </div>
@@ -253,7 +290,11 @@
                 <div class="icon"><i class="bx bxl-dribbble"></i></div>
                 <h4 class="title"><a href="">IoT/Hardware</a></h4>
                 <p class="description">
-                  IoT Hardware includes a wide range of devices such as devices for routing, bridges, sensors etc. These IoT devices manage key tasks and functions such as system activation, security, action specifications, communication, and detection of support-specific goals and actions. 
+                  IoT Hardware includes a wide range of devices such as devices
+                  for routing, bridges, sensors etc. These IoT devices manage
+                  key tasks and functions such as system activation, security,
+                  action specifications, communication, and detection of
+                  support-specific goals and actions.
                 </p>
               </div>
             </div>
@@ -1009,12 +1050,23 @@
           </div>
         </div>
       </section>
-    
+
       <div>
         <!-- <div><a href="/register-page" class="btn-get-started scrollto">Register</a></div> -->
-        <center><a href="/mentor_form"><button type="button" id="mbtn" class="btn btn-warning mx-3 d-flex align-items-center" data-aos="fade-up">Register as a Mentor</button></a></center>
-        </div>
-<br>
+        <center>
+          <a href="/mentor_form"
+            ><button
+              type="button"
+              id="mbtn"
+              class="btn btn-warning mx-3 d-flex align-items-center"
+              data-aos="fade-up"
+            >
+              Register as a Mentor
+            </button></a
+          >
+        </center>
+      </div>
+      <br />
       <!-- ======= Clients Section ======= -->
       <section id="clients" class="clients section-bg">
         <div class="container" data-aos="fade-up">
@@ -1030,30 +1082,39 @@
           >
             <div class="swiper-wrapper align-items-center">
               <div class="swiper-slide">
-                <a href="https://www.linkedin.com/company/girlscript-foundation/" target="_blank">
-                <img
-                  src="assets/img/clients/client-1.png"
-                  class="img-fluid"
-                  alt=""
-                />
+                <a
+                  href="https://www.linkedin.com/company/girlscript-foundation/"
+                  target="_blank"
+                >
+                  <img
+                    src="assets/img/clients/client-1.png"
+                    class="img-fluid"
+                    alt=""
+                  />
                 </a>
               </div>
               <div class="swiper-slide">
-                <a href="https://www.linkedin.com/company/msackiit" target="_blank">
-                <img
-                  src="assets/img/clients/client-2.png"
-                  class="img-fluid"
-                  alt=""
-                />
+                <a
+                  href="https://www.linkedin.com/company/msackiit"
+                  target="_blank"
+                >
+                  <img
+                    src="assets/img/clients/client-2.png"
+                    class="img-fluid"
+                    alt=""
+                  />
                 </a>
               </div>
               <div class="swiper-slide">
-                <a href="https://www.linkedin.com/school/laxminarayan-institute-of-technology" target="_blank">
-                <img
-                  src="assets/img/clients/client-3.png"
-                  class="img-fluid"
-                  alt=""
-                />
+                <a
+                  href="https://www.linkedin.com/school/laxminarayan-institute-of-technology"
+                  target="_blank"
+                >
+                  <img
+                    src="assets/img/clients/client-3.png"
+                    class="img-fluid"
+                    alt=""
+                  />
                 </a>
               </div>
               <div class="swiper-slide">
@@ -1097,21 +1158,20 @@
         </div>
       </section>
       <!-- End Clients Section -->
-        
 
+      <br />
 
-
-
-<br>
-
- <section id="services" class="services section-bg">
+      <section id="services" class="services section-bg">
         <div class="container" data-aos="fade-up">
-          <div class="section-title" style="padding-bottom: 0px;">
+          <div class="section-title" style="padding-bottom: 0px">
             <h2>Compete to Win !!!</h2>
             <p>Leaderboard</p>
           </div>
-          
-          <div align="center" style="font-size:40px; font-family:fisa,monospace; ">
+
+          <div
+            align="center"
+            style="font-size: 40px; font-family: fisa, monospace"
+          >
             &nbsp;coming soon!
           </div>
           <!-- <div class="row">
@@ -1127,7 +1187,7 @@
     <div class="day active">Week</div>
     <div class="day">Month</div>
   </div> -->
-  <!-- <div class="profile">
+          <!-- <div class="profile">
     <div class="person second">
       <div class="num">2</div>
       <i class="fas fa-caret-up"></i>
@@ -1178,7 +1238,7 @@
     <div class="day active">Week</div>
     <div class="day">Month</div>
   </div> -->
-  <!-- <div class="profile">
+          <!-- <div class="profile">
     <div class="person second">
       <div class="num">2</div>
       <i class="fas fa-caret-up"></i>
@@ -1230,7 +1290,7 @@
     <div class="day active">Week</div>
     <div class="day">Month</div>
   </div> -->
-  <!--<div class="profile">
+          <!--<div class="profile">
     <div class="person second">
       <div class="num">2</div>
       <i class="fas fa-caret-up"></i>
@@ -1270,22 +1330,8 @@
 </div>
 
 </div>  -->
-
         </div>
       </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       <!-- ======= Contact Us Section ======= -->
       <section id="contact" class="contact">
@@ -1301,7 +1347,7 @@
               data-aos="fade-up"
               data-aos-delay="100"
             > -->
-              <!-- <div class="info">
+            <!-- <div class="info">
                 <div class="address">
                   <i class="bi bi-geo-alt"></i>
                   <h4>Location:</h4>
@@ -1407,8 +1453,8 @@
                 <!-- A108 Adam Street <br />
                 New York, NY 535022<br />
                 United States <br /><br /> -->
-                <br>
-                <br>
+                <br />
+                <br />
                 <!-- <strong>Phone:</strong> +1 5589 55488 55<br /> -->
                 <strong>Email:</strong> acm@iemcal.com<br />
               </p>
@@ -1471,7 +1517,7 @@
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <!-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
                 <!-- <a href="#" class="instagram" -->
-                  <!-- ><i class="bx bxl-instagram"></i -->
+                <!-- ><i class="bx bxl-instagram"></i -->
                 <!-- ></a> -->
                 <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
