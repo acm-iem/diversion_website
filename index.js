@@ -116,8 +116,8 @@ function send_Mail(mailid){
 app.post('/register-mentor',upload.single('image'),(req,res)=>{
      const user = new newMentor()
      formdata  = req.body
-
-     user.mentor_name = formdata.mentor_name
+     console.log(formdata)
+     user.mentor_name = formdata.mentor_name[0]
      user.mentor_email = formdata.mentor_email
      user.mentor_ph_no = formdata.mentor_ph_no
      user.image = slno
@@ -158,8 +158,25 @@ function send_Mail_Mentor(mailid){
     from:ad_mail,
     to:mailid,
     subject:'Welcome to Diversion',
-    text:'You have registered for Diversion'
+    text:`Dear ${formdata.mentor_name},
 
+          We’re delighted to inform you that you’ve filled up the mentorship registration form successfully.
+
+          DIVERSION 2022 is an event organized by ACM-CSI IEM Student Chapter which encourages participants to contribute in open-source.Participants can contribute to a  plethora of open-source projects in various fields including AI & ML, App development and Web development.We also have projects based on hardware-related domains like IoT and robotics.
+
+          DIVERSION 2022 will have engaging speakers/workshops throughout the event to keep participants motivated about their applications as well as provide mentors to help with technical debugging. 
+
+          Mentors will prove to be crucial in providing important practical insights to all the participants as they contribute to various open-source projects.
+
+          Our team is currently reviewing your application and will be contacting you soon.
+
+          Let us join hands to celebrate this festival of Open Source contribution in it’s true spirit, in the open source event which lasts longer.
+
+          For any further queries, please contact :  acm@iemcal.com
+
+          Regards,
+          TEAM DIVERSION
+          `
     };
 
     transporter.sendMail(mailOption,(err,result)=>{
