@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const nodemailer = require('nodemailer')
 const multer = require('multer')
 const path = require('path')
-
+const hbs = require('nodemailer-express-handlebars')
 
 const newUser = mongoose.model('users')
 const newMentor = mongoose.model('mentors')
@@ -16,15 +16,6 @@ const port = process.env.PORT || 3000
 ad_mail = 'diversioniem@outlook.com'
 ad_password = 'souvik@nonetwork666'
 
-const transporter=nodemailer.createTransport({
-    service:'hotmail',
-    auth:{
-        user:ad_mail,
-        pass:ad_password
-     }
-  });
-
-transporter.use("","")
 
 
 //image upload path and name set
@@ -105,6 +96,20 @@ app.post('/register',upload.single('image'),(req,res)=>{
 function send_Mail(mailid){
     //    console.log(mailid);
     
+     const transporter=nodemailer.createTransport({
+          service:'hotmail',
+          auth:{
+               user:ad_mail,
+               pass:ad_password
+          }
+     });
+
+     transporter.use("compile",hbs()({
+          viewEngine:"express-handlebars",
+          viewPath:"./email_templates/"
+     }))
+
+
     const mailOption={
     from:ad_mail,
     to:mailid,
@@ -157,6 +162,19 @@ app.post('/register-mentor',upload.single('image'),(req,res)=>{
 function send_Mail_Mentor(mailid){
     //    console.log(mailid);
 
+     const transporter=nodemailer.createTransport({
+          service:'hotmail',
+          auth:{
+               user:ad_mail,
+               pass:ad_password
+          }
+     });
+
+     // transporter.use("compile",hbs({
+     //      viewEngine:"express-handlebars",
+     //      viewPath:"./email_templates"
+     // }))
+
     const mailOption={
     from:ad_mail,
     to:mailid,
@@ -179,7 +197,12 @@ function send_Mail_Mentor(mailid){
 
           Regards,
           TEAM DIVERSION
-          `
+          `,
+     attachments:[
+          { filename: './brochure.txt' }
+     ]
+     // template:'main
+     
     };
 
     transporter.sendMail(mailOption,(err,result)=>{
