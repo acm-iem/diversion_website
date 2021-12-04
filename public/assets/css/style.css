@@ -581,6 +581,7 @@ section {
   margin: 0 0 35px 0;
   list-style: none;
   text-align: center;
+  
 }
 .portfolio #portfolio-flters li {
   cursor: pointer;
@@ -623,6 +624,7 @@ section {
   transition: 0.3s;
   position: relative;
   z-index: 1;
+  object-fit: cover;
 }
 .portfolio .portfolio-wrap .portfolio-links {
   opacity: 0;
