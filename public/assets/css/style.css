@@ -369,7 +369,6 @@ h6,
   }
   #hero .hero-img img {
     width: 50%;
-    
   }
 }
 @media (max-width: 768px) {
@@ -581,7 +580,6 @@ section {
   margin: 0 0 35px 0;
   list-style: none;
   text-align: center;
-  
 }
 .portfolio #portfolio-flters li {
   cursor: pointer;
@@ -1017,7 +1015,7 @@ section {
 .contact .node-email-form .loading {
   display: none;
   background: #fff;
-  text-align: center; 
+  text-align: center;
   padding: 15px;
 }
 .contact .node-email-form .loading:before {
@@ -1489,5 +1487,13 @@ section {
   }
   50% {
     transform: translateY(-30px);
+  }
+}
+
+/* /mobile view center */
+
+@media only screen and (max-width: 600px) {
+  .cent {
+    text-align: center;
   }
 }
