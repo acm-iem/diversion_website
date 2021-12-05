@@ -10,6 +10,7 @@ const hbs = require('nodemailer-express-handlebars')
 
 const newUser = mongoose.model('users')
 const newMentor = mongoose.model('mentors')
+const newContact = mongoose.model('contacts')
 
 const port = process.env.PORT || 3000
 
@@ -65,7 +66,7 @@ app.get('/guidelines',(req,res)=>{
 app.post('/register',upload.single('image'),(req,res)=>{
      const user = new newUser()
      formdata  = req.body
-
+     console.log(formdata)
      user.project_nm = formdata.project_name[0]
      user.lead_name = formdata.lead_name
      user.lead_email = formdata.lead_email
@@ -81,7 +82,7 @@ app.post('/register',upload.single('image'),(req,res)=>{
      user.lead_linkedin = formdata.lead_linkedin
      user.lead_github = formdata.lead_github
      user.lead_twitter = formdata.lead_twitter
-     
+     user.date = Date.now()
 
      user.save((err,data)=>{
           if(!err){
@@ -108,9 +109,9 @@ function send_Mail(mailid){
      });
 
      // transporter.use("compile",hbs()({
-     //      viewEngine:"express-handlebars",
+     //      viewEngine:"nodemailer-express-handlebars",
      //      viewPath:"./views/"
-     // }))
+     // }));
 
 
     const mailOption={
@@ -135,7 +136,11 @@ For any further queries, please contact :  acm@iemcal.com
 Regards,
 
 TEAM DIVERSION
-`
+`,
+attachments:[
+          { filename: 'brochure.pdf',path: './brochure.pdf' }
+     ]
+     // template:'main'
 
     };
 
@@ -167,6 +172,7 @@ app.post('/register-mentor',upload.single('image'),(req,res)=>{
      user.lead_linkedin = formdata.lead_linkedin
      user.lead_github = formdata.lead_github
      user.lead_twitter = formdata.lead_twitter
+     user.date = Date.now()
      
 
      user.save((err,data)=>{
@@ -192,9 +198,9 @@ function send_Mail_Mentor(mailid){
      });
 
      // transporter.use("compile",hbs({
-     //      viewEngine:"express-handlebars",
+     //      viewEngine:"nodemailer-express-handlebars",
      //      viewPath:"./views"
-     // }))
+     // }));
 
     const mailOption={
     from:ad_mail,
@@ -219,9 +225,9 @@ function send_Mail_Mentor(mailid){
           Regards,
           TEAM DIVERSION
           `,
-     // attachments:[
-     //      { filename: 'brochure.txt',path: './brochure.txt' }
-     // ],
+     attachments:[
+          { filename: 'brochure.pdf',path: './brochure.pdf' }
+     ]
      // template:'main'
      
     };
@@ -235,6 +241,25 @@ function send_Mail_Mentor(mailid){
     })
 }
 
+app.post('/contactus',(req,res)=>{
+
+     const user = new newContact()
+     formdata  = req.body
+     console.log(formdata)
+     user.name = formdata.cname
+     user.email = formdata.cemail
+     user.subject = formdata.csubject
+     user.message = formdata.cmessage
+     user.date = Date.now()
+     user.save((err,data)=>{
+          if(!err){
+               console.log("Database Saved Succesfully")
+               res.render('thankyou2')
+          }
+          else
+               console.log(err)    
+     })
+})
 
 app.listen(port,()=>{
      console.log("Server is running at PORT 3000")

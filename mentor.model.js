@@ -17,7 +17,8 @@ const newMentorSchema = new mongoose.Schema({
      lead_linkedin:String,
      lead_github:String,
      lead_twitter:String,
-     image:String
+     image:String,
+     date:Date
 })
 
 

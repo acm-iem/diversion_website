@@ -984,7 +984,7 @@ section {
   background: #eb5d1e;
   color: #fff;
 }
-.contact .php-email-form {
+.contact .node-email-form {
   width: 100%;
   border-top: 3px solid #eb5d1e;
   border-bottom: 3px solid #eb5d1e;
@@ -992,10 +992,10 @@ section {
   background: #fff;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
-.contact .php-email-form .form-group {
+.contact .node-email-form .form-group {
   padding-bottom: 8px;
 }
-.contact .php-email-form .error-message {
+.contact .node-email-form .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -1003,10 +1003,10 @@ section {
   padding: 15px;
   font-weight: 600;
 }
-.contact .php-email-form .error-message br + br {
+.contact .node-email-form .error-message br + br {
   margin-top: 25px;
 }
-.contact .php-email-form .sent-message {
+.contact .node-email-form .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -1014,13 +1014,13 @@ section {
   padding: 15px;
   font-weight: 600;
 }
-.contact .php-email-form .loading {
+.contact .node-email-form .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
-.contact .php-email-form .loading:before {
+.contact .node-email-form .loading:before {
   content: '';
   display: inline-block;
   border-radius: 50%;
@@ -1032,19 +1032,19 @@ section {
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
 }
-.contact .php-email-form input,
-.contact .php-email-form textarea {
+.contact .node-email-form input,
+.contact .node-email-form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
-.contact .php-email-form input {
+.contact .node-email-form input {
   height: 44px;
 }
-.contact .php-email-form textarea {
+.contact .node-email-form textarea {
   padding: 10px 12px;
 }
-.contact .php-email-form button[type='submit'] {
+.contact .node-email-form button[type='submit'] {
   background: #eb5d1e;
   border: 0;
   padding: 10px 24px;
@@ -1052,7 +1052,7 @@ section {
   transition: 0.4s;
   border-radius: 4px;
 }
-.contact .php-email-form button[type='submit']:hover {
+.contact .node-email-form button[type='submit']:hover {
   background: #ef7f4d;
 }
 @-webkit-keyframes animate-loading {

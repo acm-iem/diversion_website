@@ -5,8 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>Diversion</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
+    <meta content="DIVERSION is an event organized by ACM-CSI IEM Student Chapter which encourages participants to contribute in open-source. By contributing to an open-source project, participants receive immediate feedback on their development and programming skills." name="description" />
+    <meta content="Open-Source,Hackathon,Github,Open-Source event,projects,mentorship,guidance" name="keywords" />
 
     <!-- Google Fonts -->
     <link
@@ -460,7 +460,7 @@
                     title="App 1"
                     ><i class="bi bi-plus"></i
                   ></a>
-                  <a href="/portfolio-details" title="More Details"
+                  <a href="#" title="More Details"
                     ><i class="bi bi-link"></i
                   ></a>
                 </div>
@@ -486,7 +486,7 @@
                     title="Web 3"
                     ><i class="bi bi-plus"></i
                   ></a>
-                  <a href="/portfolio-details" title="More Details"
+                  <a href="#" title="More Details"
                     ><i class="bi bi-link"></i
                   ></a>
                 </div>
@@ -512,7 +512,7 @@
                     title="App 2"
                     ><i class="bi bi-plus"></i
                   ></a>
-                  <a href="/portfolio-details" title="More Details"
+                  <a href="#" title="More Details"
                     ><i class="bi bi-link"></i
                   ></a>
                 </div>
@@ -538,7 +538,7 @@
                     title="Card 2"
                     ><i class="bi bi-plus"></i
                   ></a>
-                  <a href="/portfolio-details" title="More Details"
+                  <a href="#" title="More Details"
                     ><i class="bi bi-link"></i
                   ></a>
                 </div>
@@ -564,7 +564,7 @@
                     title="Web 2"
                     ><i class="bi bi-plus"></i
                   ></a>
-                  <a href="/portfolio-details" title="More Details"
+                  <a href="#" title="More Details"
                     ><i class="bi bi-link"></i
                   ></a>
                 </div>
@@ -590,7 +590,7 @@
                     title="App 3"
                     ><i class="bi bi-plus"></i
                   ></a>
-                  <a href="/portfolio-details" title="More Details"
+                  <a href="#" title="More Details"
                     ><i class="bi bi-link"></i
                   ></a>
                 </div>
@@ -616,7 +616,7 @@
                     title="Card 1"
                     ><i class="bi bi-plus"></i
                   ></a>
-                  <a href="/portfolio-details" title="More Details"
+                  <a href="#" title="More Details"
                     ><i class="bi bi-link"></i
                   ></a>
                 </div>
@@ -642,7 +642,7 @@
                     title="Card 3"
                     ><i class="bi bi-plus"></i
                   ></a>
-                  <a href="/portfolio-details" title="More Details"
+                  <a href="#" title="More Details"
                     ><i class="bi bi-link"></i
                   ></a>
                 </div>
@@ -668,7 +668,7 @@
                     title="Web 3"
                     ><i class="bi bi-plus"></i
                   ></a>
-                  <a href="/portfolio-details" title="More Details"
+                  <a href="#" title="More Details"
                     ><i class="bi bi-link"></i
                   ></a>
                 </div>
@@ -1360,19 +1360,18 @@ You can compete with your own project idea and we would be more than happy to he
               data-aos-delay="200"
             >
               <form
-                action="forms/contact.php"
+                action="/contactus"
                 method="post"
-                role="form"
-                class="php-email-form"
+                class="node-email-form"
               >
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="name">Your Name</label>
                     <input
                       type="text"
-                      name="name"
+                      name="cname"
                       class="form-control"
-                      id="name"
+                      id="cname"
                       placeholder="Your Name"
                       required
                     />
@@ -1382,8 +1381,8 @@ You can compete with your own project idea and we would be more than happy to he
                     <input
                       type="email"
                       class="form-control"
-                      name="email"
-                      id="email"
+                      name="cemail"
+                      id="cemail"
                       placeholder="Your Email"
                       required
                     />
@@ -1394,8 +1393,8 @@ You can compete with your own project idea and we would be more than happy to he
                   <input
                     type="text"
                     class="form-control"
-                    name="subject"
-                    id="subject"
+                    name="csubject"
+                    id="csubject"
                     placeholder="Subject"
                     required
                   />
@@ -1404,7 +1403,7 @@ You can compete with your own project idea and we would be more than happy to he
                   <label for="name">Message</label>
                   <textarea
                     class="form-control"
-                    name="message"
+                    name="cmessage"
                     rows="10"
                     required
                   ></textarea>
@@ -1417,7 +1416,7 @@ You can compete with your own project idea and we would be more than happy to he
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit">Send Message</button>
+                  <input type="submit" name="submit" value="Send Message">
                 </div>
               </form>
             </div>
