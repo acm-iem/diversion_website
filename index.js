@@ -70,7 +70,7 @@ app.post('/register',upload.single('image'),(req,res)=>{
      const user = new newUser()
      formdata  = req.body
      console.log(formdata)
-     user.project_nm = formdata.project_name[0]
+     user.project_nm = formdata.project_name
      user.lead_name = formdata.lead_name
      user.lead_email = formdata.lead_email
      user.image = slno
@@ -117,7 +117,7 @@ app.post('/register-mentor',upload.single('image'),(req,res)=>{
      const user = new newMentor()
      formdata  = req.body
      console.log(formdata)
-     user.mentor_name = formdata.mentor_name[0]
+     user.mentor_name = formdata.mentor_name
      user.mentor_email = formdata.mentor_email
      user.mentor_ph_no = formdata.mentor_ph_no
      user.image = slno
