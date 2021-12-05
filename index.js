@@ -58,50 +58,6 @@ app.get('/leaderboard',(req,res)=>{
 })
 
 
-text_mentor = `
-
-          We’re delighted to inform you that you’ve filled up the mentorship registration form successfully.
-
-          DIVERSION 2022 is an event organized by ACM-CSI IEM Student Chapter which encourages participants to contribute in open-source.Participants can contribute to a  plethora of open-source projects in various fields including AI & ML, App development and Web development.We also have projects based on hardware-related domains like IoT and robotics.
-
-          DIVERSION 2022 will have engaging speakers/workshops throughout the event to keep participants motivated about their applications as well as provide mentors to help with technical debugging. 
-
-          Mentors will prove to be crucial in providing important practical insights to all the participants as they contribute to various open-source projects.
-
-          Our team is currently reviewing your application and will be contacting you soon.
-
-          Let us join hands to celebrate this festival of Open Source contribution in it’s true spirit, in the open source event which lasts longer.
-
-          For any further queries, please contact :  acm@iemcal.com
-
-          Regards,
-          TEAM DIVERSION
-          `;
-
-// for lead
-text_lead = `
-
-          We’re delighted to inform you that you’ve filled up the project registration form successfully.
-
-          DIVERSION 2022 is an event organized by ACM-CSI IEM Student Chapter which encourages participants to contribute in open-source.Participants can contribute to a  plethora of open-source projects in various fields including AI & ML, App development and Web development.We also have projects based on hardware-related domains like IoT and robotics.
-
-          Participants are free to compete with their  own project idea and we would be more than happy to help you achieve that. The only thing that must be in your idea is that it should be scalable so that more participants can work on it. The perks will include swags.
-
-
-          Our team is currently reviewing your project application and will be contacting you soon. Stay Tuned!
-
-          Let us join hands to celebrate this festival of Open Source contribution in it’s true spirit, in the open source event which lasts longer.
-
-          For any further queries, please contact :  acm@iemcal.com
-
-          Regards,
-
-          TEAM DIVERSION
-          `;
-
-
-
-
 //registering projects
 
 app.get('/mentor_form',(req,res)=>{
@@ -136,7 +92,7 @@ app.post('/register',upload.single('image'),(req,res)=>{
                console.log("Database Saved Succesfully")
                
                var dataToSend;
-               const python = spawn('python', ['script1.py',text_lead,formdata.lead_email,user.lead_name]);
+               const python = spawn('python', ['script1.py', formdata.lead_email, user.lead_name, "lead"]);
                python.stdout.on('data', function (data) {
                 dataToSend = data.toString();
                });
@@ -185,7 +141,7 @@ app.post('/register-mentor',upload.single('image'),(req,res)=>{
                
                var dataToSend;
 
-     const python = spawn('python', ['script1.py',text_mentor,formdata.lead_email,user.mentor_name]);
+     const python = spawn('python', ['script1.py', formdata.mentor_email, user.mentor_name, "mentor"]);
      
      python.stdout.on('data', function (data) {
      //  console.log('Pipe data from python script ...');
@@ -199,6 +155,7 @@ app.post('/register-mentor',upload.single('image'),(req,res)=>{
 
      });
      // console.log("ok")
+     res.render("thankyou")
           }
           else
                console.log(err)    
