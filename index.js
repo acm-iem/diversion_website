@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer')
 const multer = require('multer')
 const path = require('path')
 const hbs = require('nodemailer-express-handlebars')
+const {spawn} = require('child_process')
 
 const newUser = mongoose.model('projects')
 const newMentor = mongoose.model('mentors')
@@ -55,6 +56,52 @@ app.get('/portfolio-details',(req,res)=>{
 app.get('/leaderboard',(req,res)=>{
      res.render('leaderboard')
 })
+
+
+text_mentor = `
+
+          We’re delighted to inform you that you’ve filled up the mentorship registration form successfully.
+
+          DIVERSION 2022 is an event organized by ACM-CSI IEM Student Chapter which encourages participants to contribute in open-source.Participants can contribute to a  plethora of open-source projects in various fields including AI & ML, App development and Web development.We also have projects based on hardware-related domains like IoT and robotics.
+
+          DIVERSION 2022 will have engaging speakers/workshops throughout the event to keep participants motivated about their applications as well as provide mentors to help with technical debugging. 
+
+          Mentors will prove to be crucial in providing important practical insights to all the participants as they contribute to various open-source projects.
+
+          Our team is currently reviewing your application and will be contacting you soon.
+
+          Let us join hands to celebrate this festival of Open Source contribution in it’s true spirit, in the open source event which lasts longer.
+
+          For any further queries, please contact :  acm@iemcal.com
+
+          Regards,
+          TEAM DIVERSION
+          `;
+
+// for lead
+text_lead = `
+
+          We’re delighted to inform you that you’ve filled up the project registration form successfully.
+
+          DIVERSION 2022 is an event organized by ACM-CSI IEM Student Chapter which encourages participants to contribute in open-source.Participants can contribute to a  plethora of open-source projects in various fields including AI & ML, App development and Web development.We also have projects based on hardware-related domains like IoT and robotics.
+
+          Participants are free to compete with their  own project idea and we would be more than happy to help you achieve that. The only thing that must be in your idea is that it should be scalable so that more participants can work on it. The perks will include swags.
+
+
+          Our team is currently reviewing your project application and will be contacting you soon. Stay Tuned!
+
+          Let us join hands to celebrate this festival of Open Source contribution in it’s true spirit, in the open source event which lasts longer.
+
+          For any further queries, please contact :  acm@iemcal.com
+
+          Regards,
+
+          TEAM DIVERSION
+          `;
+
+
+
+
 //registering projects
 
 app.get('/mentor_form',(req,res)=>{
@@ -87,7 +134,16 @@ app.post('/register',upload.single('image'),(req,res)=>{
      user.save((err,data)=>{
           if(!err){
                console.log("Database Saved Succesfully")
-               send_Mail(formdata.lead_email)
+               
+               var dataToSend;
+               const python = spawn('python', ['script1.py',text_lead,formdata.lead_email,user.lead_name]);
+               python.stdout.on('data', function (data) {
+                dataToSend = data.toString();
+               });
+               python.on('close', ()=>{
+                    console.log(dataToSend);
+
+               });
                res.render("thankyou")
           }
           else
@@ -97,61 +153,9 @@ app.post('/register',upload.single('image'),(req,res)=>{
 
 
 //sending mails
-function send_Mail(mailid){
-    //    console.log(mailid);
-    
-     const transporter=nodemailer.createTransport({
-          service:'hotmail',
-          auth:{
-               user:ad_mail,
-               pass:ad_password
-          }
-     });
 
-     // transporter.use("compile",hbs()({
-     //      viewEngine:"nodemailer-express-handlebars",
-     //      viewPath:"./views/"
-     // }));
+//for mentor
 
-
-    const mailOption={
-    from:ad_mail,
-    to:mailid,
-    subject:'Welcome to Diversion',
-    text:`Dear ${formdata.lead_name},
-
-We’re delighted to inform you that you’ve filled up the project registration form successfully.
-
-DIVERSION 2022 is an event organized by ACM-CSI IEM Student Chapter which encourages participants to contribute in open-source.Participants can contribute to a  plethora of open-source projects in various fields including AI & ML, App development and Web development.We also have projects based on hardware-related domains like IoT and robotics.
-
-Participants are free to compete with their  own project idea and we would be more than happy to help you achieve that. The only thing that must be in your idea is that it should be scalable so that more participants can work on it. The perks will include swags.
-
-
-Our team is currently reviewing your project application and will be contacting you soon. Stay Tuned!
-
-Let us join hands to celebrate this festival of Open Source contribution in it’s true spirit, in the open source event which lasts longer.
-
-For any further queries, please contact :  acm@iemcal.com
-
-Regards,
-
-TEAM DIVERSION
-`,
-attachments:[
-          { filename: 'brochure.pdf',path: './brochure.pdf' }
-     ]
-     // template:'main'
-
-    };
-
-    transporter.sendMail(mailOption,(err,result)=>{
-
-    if(err)
-         console.log(err);
-    else
-         console.log('Mail sent successfully!!!');
-    })
-}
 
 app.post('/register-mentor',upload.single('image'),(req,res)=>{
      const user = new newMentor()
@@ -178,68 +182,29 @@ app.post('/register-mentor',upload.single('image'),(req,res)=>{
      user.save((err,data)=>{
           if(!err){
                console.log("Database Saved Succesfully")
-               send_Mail_Mentor(formdata.mentor_email)
-               res.render("thankyou")
+               
+               var dataToSend;
+
+     const python = spawn('python', ['script1.py',text_mentor,formdata.lead_email,user.mentor_name]);
+     
+     python.stdout.on('data', function (data) {
+     //  console.log('Pipe data from python script ...');
+      dataToSend = data.toString();
+     });
+
+     python.on('close', (code) => {
+     // console.log(`child process close all stdio with code ${code}`);
+     
+     console.log(dataToSend);
+
+     });
+     // console.log("ok")
           }
           else
                console.log(err)    
      })
 })
 
-function send_Mail_Mentor(mailid){
-    //    console.log(mailid);
-
-     const transporter=nodemailer.createTransport({
-          service:'hotmail',
-          auth:{
-               user:ad_mail,
-               pass:ad_password
-          }
-     });
-
-     // transporter.use("compile",hbs({
-     //      viewEngine:"nodemailer-express-handlebars",
-     //      viewPath:"./views"
-     // }));
-
-    const mailOption={
-    from:ad_mail,
-    to:mailid,
-    subject:'Welcome to Diversion',
-    text:`Dear ${formdata.mentor_name},
-
-          We’re delighted to inform you that you’ve filled up the mentorship registration form successfully.
-
-          DIVERSION 2022 is an event organized by ACM-CSI IEM Student Chapter which encourages participants to contribute in open-source.Participants can contribute to a  plethora of open-source projects in various fields including AI & ML, App development and Web development.We also have projects based on hardware-related domains like IoT and robotics.
-
-          DIVERSION 2022 will have engaging speakers/workshops throughout the event to keep participants motivated about their applications as well as provide mentors to help with technical debugging. 
-
-          Mentors will prove to be crucial in providing important practical insights to all the participants as they contribute to various open-source projects.
-
-          Our team is currently reviewing your application and will be contacting you soon.
-
-          Let us join hands to celebrate this festival of Open Source contribution in it’s true spirit, in the open source event which lasts longer.
-
-          For any further queries, please contact :  acm@iemcal.com
-
-          Regards,
-          TEAM DIVERSION
-          `,
-     attachments:[
-          { filename: 'brochure.pdf',path: './brochure.pdf' }
-     ]
-     // template:'main'
-     
-    };
-
-    transporter.sendMail(mailOption,(err,result)=>{
-
-    if(err)
-         console.log(err);
-    else
-         console.log('Mail sent successfully!!!');
-    })
-}
 
 app.post('/contactus',(req,res)=>{
 
@@ -260,6 +225,7 @@ app.post('/contactus',(req,res)=>{
                console.log(err)    
      })
 })
+
 
 app.listen(port,()=>{
      console.log("Server is running at PORT 3000")
