@@ -1017,7 +1017,7 @@ section {
 .contact .node-email-form .loading {
   display: none;
   background: #fff;
-  text-align: center;
+  text-align: center; 
   padding: 15px;
 }
 .contact .node-email-form .loading:before {
