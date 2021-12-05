@@ -8,7 +8,7 @@ const multer = require('multer')
 const path = require('path')
 const hbs = require('nodemailer-express-handlebars')
 
-const newUser = mongoose.model('users')
+const newUser = mongoose.model('projects')
 const newMentor = mongoose.model('mentors')
 const newContact = mongoose.model('contacts')
 
