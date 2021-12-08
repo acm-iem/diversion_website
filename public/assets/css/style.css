@@ -1496,4 +1496,7 @@ section {
   .cent {
     text-align: center;
   }
+  .portfolio-wrap img {
+    content: url('../img/portfolio/logoban.jpeg');
+  }
 }
