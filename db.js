@@ -14,4 +14,4 @@ mongoose.connect(URI,{
 require('./user.model')
 require('./mentor.model')
 require('./contact.model')
-
+require('./participant.model')
