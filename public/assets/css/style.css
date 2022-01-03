@@ -1669,6 +1669,30 @@ section {
     justify-content: center;
   }
 }
+/* text align center */
 .tac {
   text-align: center;
+}
+
+/* card */
+.card-image {
+  background-repeat: no-repeat;
+  height: 90%;
+
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+.card-details {
+  background-color: #faa499;
+  background-image: linear-gradient(
+    319deg,
+    #faa499 0%,
+    #f7dd85 37%,
+    #ffc55c 100%
+  );
+
+  margin: 0 14px;
+
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
