@@ -1696,3 +1696,10 @@ section {
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
 }
+
+.jcc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
