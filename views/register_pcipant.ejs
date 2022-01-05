@@ -34,7 +34,6 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
   </head>
-  </head>
   <body>
 
      <div class="preloader">
@@ -67,44 +66,6 @@
 
         <nav id="navbar" class="navbar">
           <ul>
-            <!-- <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="#about">About Us</a></li> -->
-            <!-- <li><a class="nav-link scrollto" href="#services">Tracks</a></li>
-            <li>
-              <a class="nav-link scrollto" href="#portfolio">Projects</a>
-            </li> -->
-
-
-
-            <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li>
-            <li class="dropdown">
-              <a href="#"
-                ><span>Drop Down</span> <i class="bi bi-chevron-down"></i
-              ></a>
-              <ul>
-                <li><a href="#">Drop Down 1</a></li>
-                <li class="dropdown">
-                  <a href="#"
-                    ><span>Deep Drop Down</span>
-                    <i class="bi bi-chevron-right"></i
-                  ></a>
-                  <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Drop Down 2</a></li>
-                <li><a href="#">Drop Down 3</a></li>
-                <li><a href="#">Drop Down 4</a></li>
-              </ul>
-            </li>
-            <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-
-
-
             <li>
               <a class="getstarted scrollto" href="/">Go back</a>
             </li>
@@ -203,21 +164,20 @@
                                     </div>
                                     
                                      <div class="form-group">
-                                          <input type="text" list="mentor_domain" name="mentor_domain" class="form-control" placeholder="Project Domain *"/>
-                                          <datalist id="mentor_domain" name="mentor_domain">
-                                            <option>AI-ML</option>
-                                            <option>WEB-DEV</option>
-                                            <option>APP-DEV</option>
-                                            <option>IOT/HARDWARE</option>
-                                            <option>OTHERS(MENTION)</option>
-                                          </datalist>
+                                          <!-- <input type="text" list="mentor_domain" name="mentor_domain" class="form-control" placeholder="Project Domain *"/> -->
+                                          <select class="form-control" id="mentor_domain" name="mentor_domain">
+                                            <option value="-1">Select your domain</option>
+                                            <option value="AI-ML">AI-ML</option>
+                                            <option value="WEB-DEV">WEB-DEV</option>
+                                            <option value="APP-DEV">APP-DEV</option>
+                                            <option value="IOT/HARDWARE">IOT/HARDWARE</option>
+                                            <option value="OTHERS">OTHERS</option>
+                                          </select>
                                     </div>
                                     
                                     <div class="form-group">
-                                      <div class="pjt">
-                                        <input type="text" class="form-control" id="project_link" name="project_link"  placeholder="Select your Project" value=""/>
-                                      </div>
-                                      </div>
+                                      
+                                    </div>
                               
                                 </div>
                             </div>
@@ -239,14 +199,6 @@
                                 </div>
                               </div>
                               <br>
-                              <div class="col-md-6">
-
-                                   <div class="form-group">
-                                        &nbsp;&nbsp;&nbsp;&nbsp;<label for="image">Upload your Image : -</label>
-                                      <input type="file" class="form-control" id="image" name="image" placeholder="Upload Your image" value="Upload your image">
-                                   </div>
-                              </div>
-                              <br>
                             <p align="right"><input type="submit" class="btnSubmit" data-bs-toggle="collapse" name="submit" value="Submit" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree"></p>
                         </div>
                         
@@ -254,49 +206,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="accordion-item">
-              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                  Lead details
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                <div class="accordion-body">
-                    <div class="form-content">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="lead_name" name="lead_name" required placeholder="Lead Name *" value=""/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="lead_email" name="lead_email" required placeholder="Lead email *" value=""/>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="lead_num" name="lead_num" required placeholder="Contact No. *" value=""/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="lead_college" name="lead_college" required placeholder="Institution *" value=""/>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="lead_linkedin" name="lead_linkedin" required placeholder="linkedin *" value=""/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="lead_github" name="lead_github" required placeholder="Github *" value=""/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="lead_twitter" name="lead_twitter" placeholder="Twitter" value=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <input type="submit" class="btnSubmit" id="sbmt">
-                    </div>
-                </div>
-              </div>
-            </div> -->
           </div>
       </div>
       </form>
