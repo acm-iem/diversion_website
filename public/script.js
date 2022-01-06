@@ -33,7 +33,9 @@ $(document).ready(function(){
                 method:'POST',
                 data:JSON.stringify({m:m}),
                 success:function(result) {
-                    console.log(result)
+                    // console.log(result)
+                    // alert(result)
+                    $('#irs').html(result);
                 }
             })
     });
