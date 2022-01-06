@@ -66,7 +66,10 @@ app.get('/mentor_form',(req,res)=>{
      res.render('register_mentor')
 })
 app.get('/participant_form',(req,res)=>{
-     res.render('register_pcipant')
+     // res.render('register_pcipant')
+     newUser.find((err,data)=>{
+          res.render('register_pcipant',{data:data})
+     })
 })
 app.get('/guidelines',(req,res)=>{
      res.render('guidelines')
@@ -240,7 +243,10 @@ app.post('/contactus',(req,res)=>{
 })
 
 app.get('/projects',(req,res)=>{
-     res.render('projects')
+     newUser.find((err,data)=>{
+          res.render('projects',{data:data})
+     })
+     
 })
 
 app.post('/prs',(req,res)=>{

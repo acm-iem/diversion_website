@@ -39,7 +39,7 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   </head>
   <body>
 
@@ -195,7 +195,7 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-controls="panelsStayOpen-collapseThree">
                   Project Details
                 </button>
               </h2>
@@ -208,8 +208,8 @@
                                         <input type="text" class="form-control" id="mentor_past_exp" name="mentor_past_exp" required placeholder="Past Experience (if any) *" required/>
                                     </div>
                                     
-                                     <div class="form-group">
-                                          <!-- <input type="text" list="mentor_domain" name="mentor_domain" class="form-control" placeholder="Project Domain *"/> -->
+                                     <!-- <div class="form-group">
+                                          <input type="text" list="mentor_domain" name="mentor_domain" class="form-control" placeholder="Project Domain *"/>
                                           <select class="form-control" id="mentor_domain" name="mentor_domain">
                                             <option value="-1">Select your domain</option>
                                             <option value="AI-ML">AI-ML</option>
@@ -222,290 +222,96 @@
                                     
                                     <div class="form-group" id="prs">
                                       <a href="#" class="form-control">Select your project</a>
-                                    </div>
+                                    </div> -->
                                     
                                     </div>
                                   
 
-      <!-- ======= Portfolio Section ======= -->
-      <section id="portfolio" class="portfolio">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>Projects</h2>
-            <p>Check out projects to contribute</p>
-          </div>
-
-          <div class="row" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-12">
-              <ul id="portfolio-flters">
-                <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-app">AI-ML</li>
-                <li data-filter=".filter-card">App-Dev</li>
-                <li data-filter=".filter-web">Web-Dev</li>
-                <li data-filter=".filter-card">IoT</li>
-                <li data-filter=".filter-web">Misc</li>
-              </ul>
-            </div>
-          </div>
-
-          <div
-            class="row portfolio-container"
-            data-aos="fade-up"
-            data-aos-delay="200"
-            id="irs"
-          >
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-1.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/portfolio-1.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="App 1"
-                    ><i class="bi bi-plus"></i
-                  ></a>
-                  <a href="#" title="More Details"
-                    ><i class="bi bi-link"></i
-                  ></a>
-                </div>
-                <div class="portfolio-info">
-                  <h4>Coming soon</h4>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-2.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/portfolio-2.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Web 3"
-                    ><i class="bi bi-plus"></i
-                  ></a>
-                  <a href="#" title="More Details"
-                    ><i class="bi bi-link"></i
-                  ></a>
-                </div>
-                <div class="portfolio-info">
-                  <h4>Coming soon</h4>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-3.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/portfolio-3.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="App 2"
-                    ><i class="bi bi-plus"></i
-                  ></a>
-                  <a href="#" title="More Details"
-                    ><i class="bi bi-link"></i
-                  ></a>
-                </div>
-                <div class="portfolio-info">
-                  <h4>Coming soon</h4>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-4.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/portfolio-4.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Card 2"
-                    ><i class="bi bi-plus"></i
-                  ></a>
-                  <a href="#" title="More Details"
-                    ><i class="bi bi-link"></i
-                  ></a>
-                </div>
-                <div class="portfolio-info">
-                  <h4>Coming soon</h4>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-5.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/portfolio-5.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Web 2"
-                    ><i class="bi bi-plus"></i
-                  ></a>
-                  <a href="#" title="More Details"
-                    ><i class="bi bi-link"></i
-                  ></a>
-                </div>
-                <div class="portfolio-info">
-                  <h4>Coming soon</h4>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-6.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/portfolio-6.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="App 3"
-                    ><i class="bi bi-plus"></i
-                  ></a>
-                  <a href="#" title="More Details"
-                    ><i class="bi bi-link"></i
-                  ></a>
-                </div>
-                <div class="portfolio-info">
-                  <h4>Coming soon</h4>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-7.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/portfolio-7.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Card 1"
-                    ><i class="bi bi-plus"></i
-                  ></a>
-                  <a href="#" title="More Details"
-                    ><i class="bi bi-link"></i
-                  ></a>
-                </div>
-                <div class="portfolio-info">
-                  <h4>Coming soon</h4>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-8.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/portfolio-8.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Card 3"
-                    ><i class="bi bi-plus"></i
-                  ></a>
-                  <a href="#" title="More Details"
-                    ><i class="bi bi-link"></i
-                  ></a>
-                </div>
-                <div class="portfolio-info">
-                  <h4>Coming soon</h4>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-9.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/portfolio-9.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Web 3"
-                    ><i class="bi bi-plus"></i
-                  ></a>
-                  <a href="#" title="More Details"
-                    ><i class="bi bi-link"></i
-                  ></a>
-                </div>
-                <div class="portfolio-info">
-                  <h4>Coming soon</h4>
-                  <p></p>
-                </div>
-              </div>
-            </div> -->
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>Check out projects to contribute</p>
+        </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <!-- <li data-filter="*" class="filter-active">All</li> -->
+              <li data-filter=".filter-web" class="filter-active">WEB-DEV</li>
+              <li data-filter=".filter-ai">AI-ML</li>
+              <li data-filter=".filter-app">APP-DEV</li>
+              <li data-filter=".filter-iot">IOT/WEBSITE</li>
+              <li data-filter=".filter-misc">OTHERS</li>
+            </ul>
           </div>
         </div>
-        <div>
-        <center>
-          <a href="/projects"
-            ><button
-              type="button"
-              id="mbtn"
-              class="btn btn-warning mx-3 d-flex align-items-center"
-              data-aos="fade-up"
-              style="border-radius: 1.5rem"
-            >
-              View All Projects
-            </button></a
-          >
-        </center>
+        <div
+          class="row portfolio-container"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          id="irs"
+        >
+            <%  
+              data.map((result)=>{
+                
+                if(result.project_category == 'WEB-DEV')
+                  sb = 'web';
+                else if(result.project_category == 'APP-DEV')
+                  sb = 'app';
+                else if(result.project_category == 'AI-ML')
+                  sb = 'ai';
+                else if(result.project_category == 'IOT/HARDWARE')
+                  sb = 'iot';
+                else
+                  sb = 'misc';
+            %>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-<%=sb%>">
+               <div class="portfolio-wrap">
+                 <img
+                   src="assets/img/portfolio/portfolio-6.jpg"
+                   class="img-fluid"
+                   alt=""
+                 />
+                 <div class="portfolio-links">
+                   <a
+                     href="assets/img/portfolio/portfolio-6.jpg"
+                     data-gallery="portfolioGallery"
+                     class="portfolio-lightbox"
+                     title='<%=result.project_nm%>'
+                     ><i class="bi bi-plus"></i
+                   ></a>
+                   <a href="#" title="More Details"
+                     ><i class="bi bi-link"></i
+                   ></a>
+                 </div>
+                 <div class="portfolio-info">
+                   <h4><%=result.project_nm%></h4>
+                   <p><%=data.project_info%></p>
+                 </div>
+               </div>
+            </div>
+            <%
+              })
+            %>
+        </div>
       </div>
-      </section>
-
+      <div>
+      <center>
+        <a href="/projects"
+          ><button
+            type="button"
+            id="mbtn"
+            class="btn btn-warning mx-3 d-flex align-items-center"
+            data-aos="fade-up"
+            style="border-radius: 1.5rem"
+          >
+            View All Projects
+          </button></a
+        >
+      </center>
+    </div>
+    </section>
 
 
 
@@ -531,11 +337,11 @@
    <script src="assets/js/main.js"></script>
    <script src="assets/js/script.js"></script>
    <!-- bootstrap new -->
-   <!-- <script
+   <script
      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
      crossorigin="anonymous"
-   ></script> -->
+   ></script>
    <script
      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
