@@ -40,4 +40,10 @@ window.smoothScroll = function(target) {
 //             })
 //     });
 // });
+function sws(){
+    document.getElementById('portfolio-flters').addEventListener('click',()=>{
 
+        document.getElementById("irs").classList.remove("hide");
+    })
+}
+sws();

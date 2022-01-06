@@ -172,19 +172,19 @@ app.post('/register-mentor',upload.single('image'),(req,res)=>{
 
 //regitering participants
 
-app.post('/register-pcipant',upload.single('image'),(req,res)=>{
+app.post('/register-pcipant',(req,res)=>{
      const user = new newpcipant()
      formdata  = req.body
      console.log(formdata)
      user.pcipant_name = formdata.pcipant_name
      user.pcipant_email = formdata.pcipant_email
      user.pcipant_ph_no = formdata.pcipant_ph_no
-     user.image = slno
+     // user.image = slno
      user.pcipant_city = formdata.pcipant_city
      user.pcipant_country = formdata.pcipant_country
      // user.pcipant_past_exp = formdata.pcipant_past_exp
-     user.project_link = formdata.project_link
-     user.pcipant_domain = formdata.pcipant_domain
+     // user.project_link = formdata.project_link
+     // user.pcipant_domain = formdata.pcipant_domain
      user.pcipant_status = "NO"
      // user.pcipant_num = formdata.pcipant_num
      user.pcipant_project = formdata.pcipant_project
