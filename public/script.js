@@ -21,3 +21,21 @@ window.smoothScroll = function(target) {
      // start scrolling
      scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
  }
+
+$(document).ready(function(){
+    $(document).on('click','#prs',function(){
+        var m = $('#mentor_domain').val();
+        
+        alert(m);
+            $.ajax({
+                url:'/prs', 
+                contentType:'application/json',
+                method:'POST',
+                data:JSON.stringify({m:m}),
+                success:function(result) {
+                    console.log(result)
+                }
+            })
+    });
+});
+

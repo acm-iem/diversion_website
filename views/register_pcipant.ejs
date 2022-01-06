@@ -33,6 +33,7 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
 
@@ -157,29 +158,6 @@
                                     </div>
                                     </div>
                                     <br>
-                                    <div class="col-md-6">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<label for="image">Project to be contributed : -</label>
-                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="mentor_past_exp" name="mentor_past_exp" required placeholder="Past Experience (if any) *" required/>
-                                    </div>
-                                    
-                                     <div class="form-group">
-                                          <!-- <input type="text" list="mentor_domain" name="mentor_domain" class="form-control" placeholder="Project Domain *"/> -->
-                                          <select class="form-control" id="mentor_domain" name="mentor_domain">
-                                            <option value="-1">Select your domain</option>
-                                            <option value="AI-ML">AI-ML</option>
-                                            <option value="WEB-DEV">WEB-DEV</option>
-                                            <option value="APP-DEV">APP-DEV</option>
-                                            <option value="IOT/HARDWARE">IOT/HARDWARE</option>
-                                            <option value="OTHERS">OTHERS</option>
-                                          </select>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                      
-                                    </div>
-                              
-                                </div>
                             </div>
                             <br>
                             &nbsp;&nbsp;&nbsp;&nbsp;<label for="image">Your Socials : -</label>
@@ -212,12 +190,90 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-         Project Details
+                  Project Details
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                 <div class="accordion-body">
-                  Project Cards here 
+                  
+                  <div class="col-md-6">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<label for="image">Project to be contributed : -</label>
+                                     <div class="form-group">
+                                        <input type="text" class="form-control" id="mentor_past_exp" name="mentor_past_exp" required placeholder="Past Experience (if any) *" required/>
+                                    </div>
+                                    
+                                     <div class="form-group">
+                                          <!-- <input type="text" list="mentor_domain" name="mentor_domain" class="form-control" placeholder="Project Domain *"/> -->
+                                          <select class="form-control" id="mentor_domain" name="mentor_domain">
+                                            <option value="-1">Select your domain</option>
+                                            <option value="AI-ML">AI-ML</option>
+                                            <option value="WEB-DEV">WEB-DEV</option>
+                                            <option value="APP-DEV">APP-DEV</option>
+                                            <option value="IOT/HARDWARE">IOT/HARDWARE</option>
+                                            <option value="OTHERS">OTHERS</option>
+                                          </select>
+                                    </div>
+                                    
+                                    <div class="form-group" id="prs">
+                                      <a href="#" class="form-control">Select your project</a>
+                                    </div>
+                                    <div>
+                                      <section id="portfolio" class="portfolio">
+                                      <div class="container" data-aos="fade-up">
+                                        <div class="section-title">
+                                          <h2>Projects</h2>
+                                          <p>Check out projects to contribute</p>
+                                        </div>
+
+                                        <div class="row" data-aos="fade-up" data-aos-delay="100">
+                                          <div class="col-lg-12">
+                                            <ul id="portfolio-flters">
+                                              <li data-filter="*" class="filter-active">All</li>
+                                              <li data-filter=".filter-app">AI-ML</li>
+                                              <li data-filter=".filter-card">App-Dev</li>
+                                              <li data-filter=".filter-web">Web-Dev</li>
+                                              <li data-filter=".filter-card">IoT</li>
+                                              <li data-filter=".filter-web">Misc</li>
+                                            </ul>
+                                          </div>
+                                        </div>
+
+                                        <div
+                                          class="row portfolio-container"
+                                          data-aos="fade-up"
+                                          data-aos-delay="200"
+                                        >
+                                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/portfolio-1.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/portfolio-1.jpg"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="App 1"
+                    ><i class="bi bi-plus"></i
+                  ></a>
+                  <a href="#" title="More Details"
+                    ><i class="bi bi-link"></i
+                  ></a>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Coming soon</h4>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+                                        </div>
+                                        </div>
+                                        </section>
+                                      </div>
+                                    </div>
+                                <button>Submit</button>
                 </div>
               </div>
             </div>

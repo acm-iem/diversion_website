@@ -40,6 +40,7 @@ app.set('view engine','ejs')
 app.use(bodyparser.urlencoded({
      extended:true
 }))
+app.use(bodyparser.json())
 app.use(express.static("public"))
 
 
@@ -240,6 +241,45 @@ app.post('/contactus',(req,res)=>{
 
 app.get('/projects',(req,res)=>{
      res.render('projects')
+})
+
+app.post('/prs',(req,res)=>{
+     tag = req.body.m
+     console.log(tag)
+     qr = { project_category:tag }
+     let s = ""
+     newUser.find(qr).then((result)=>{
+          // result.map((data)=>{
+          //      console.log(data)
+          //      s += `<div class="col-lg-4 col-md-6 portfolio-item filter-${m}">
+          //                <div class="portfolio-wrap">
+          //                  <img
+          //                    src="assets/img/portfolio/portfolio-6.jpg"
+          //                    class="img-fluid"
+          //                    alt=""
+          //                  />
+          //                  <div class="portfolio-links">
+          //                    <a
+          //                      href="assets/img/portfolio/portfolio-6.jpg"
+          //                      data-gallery="portfolioGallery"
+          //                      class="portfolio-lightbox"
+          //                      title="${project_nm}"
+          //                      ><i class="bi bi-plus"></i
+          //                    ></a>
+          //                    <a href="#" title="More Details"
+          //                      ><i class="bi bi-link"></i
+          //                    ></a>
+          //                  </div>
+          //                  <div class="portfolio-info">
+          //                    <h4>Coming soon</h4>
+          //                    <p>${project_info}</p>
+          //                  </div>
+          //                </div>
+          //           </div>`
+               
+          // })
+          res.send(result)
+     })
 })
 
 app.listen(port,()=>{
