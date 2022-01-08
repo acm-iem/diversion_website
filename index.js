@@ -19,6 +19,7 @@ const port = process.env.PORT || 3000
 ad_mail = 'diversioniem@outlook.com'
 ad_password = 'souvik@nonetwork666'
 
+// async:true
 
 
 //image upload path and name set
@@ -45,7 +46,11 @@ app.use(express.static("public"))
 
 
 app.get('/',(req,res)=>{
-     res.render('index')
+     // res.render('index')
+
+     newUser.find((err,data)=>{
+          res.render('index',{data:data})
+     })
 })
 app.get('/register-page',(req,res)=>{
      res.render('register')
@@ -200,7 +205,7 @@ app.post('/register-pcipant',(req,res)=>{
                
                var dataToSend;
 
-     const python = spawn('python', ['script1.py', formdata.pcipant_email, user.pcipant_name, "lead"]);
+     const python = spawn('python', ['script1.py', formdata.pcipant_email, user.pcipant_name, "pcipant"]);
      
      python.stdout.on('data', function (data) {
      //  console.log('Pipe data from python script ...');

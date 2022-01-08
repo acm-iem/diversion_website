@@ -1103,8 +1103,88 @@
       </section>
       <!-- End tracks Section -->
 
-      <!-- ======= Portfolio Section ======= -->
       <section id="portfolio" class="portfolio">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Projects</h2>
+            <p>Check out projects to contribute</p>
+          </div>
+
+          <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-12">
+              <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">All</li>
+                <li data-filter=".filter-web">WEB-DEV</li>
+                <li data-filter=".filter-app">App-Dev</li>
+                <li data-filter=".filter-ai">AI-ML</li>
+                <li data-filter=".filter-iot">IoT</li>
+                <li data-filter=".filter-misc">Others</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="row portfolio-container"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+
+          <%  
+              data.map((result)=>{
+                
+                if(result.project_category == 'WEB-DEV')
+                  sb = 'web';
+                else if(result.project_category == 'APP-DEV')
+                  sb = 'app';
+                else if(result.project_category == 'AI-ML')
+                  sb = 'ai';
+                else if(result.project_category == 'IOT/HARDWARE')
+                  sb = 'iot';
+                else
+                  sb = 'misc';
+
+
+                if(result.project_status == 'YES'){
+            %>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-<%=sb%>">
+               <div class="portfolio-wrap">
+                 <img
+                   src="projectimg/<%=result.image%>"
+                   class="img-fluid"
+                   alt=""
+                 />
+                 <div class="portfolio-links">
+                   <a
+                     href="projectimg/<%=result.image%>"
+                     data-gallery="portfolioGallery"
+                     class="portfolio-lightbox"
+                     title='<%=result.project_nm%> <br> <%=result.project_info%>'
+                     ><i class="bi bi-plus"></i
+                   ></a>
+                   <a href="#" title="More Details"
+                     ><i class="bi bi-link"></i
+                   ></a>
+                 </div>
+                 <div class="portfolio-info">
+                   <h4><%=result.project_nm%></h4>
+                   <p><%=data.project_info%></p>
+                 </div>
+               </div>
+            </div>
+            
+            <%
+                }
+              })
+            %>
+
+          </div>
+          </div>
+          </section>
+
+
+      <!-- ======= Portfolio Section ======= -->
+      <!-- <section id="portfolio" class="portfolio">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2>Projects</h2>
@@ -1379,7 +1459,7 @@
           >
         </center>
       </div>
-      </section>
+      </section> -->
       <!-- End Projects Section -->
       <!-- ======= Clients Section ======= -->
       <section id="clients" class="clients section-bg">

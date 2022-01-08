@@ -275,6 +275,8 @@
                   sb = 'iot';
                 else
                   sb = 'misc';
+
+                  if(result.project_status == 'YES'){
             %>
             <div class="col-lg-4 col-md-6 portfolio-item filter-<%=sb%>">
                <div class="portfolio-wrap">
@@ -312,6 +314,8 @@
             </div>
             
             <%
+                  }
+                  
               })
             %>
         </div>

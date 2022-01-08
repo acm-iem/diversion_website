@@ -1491,7 +1491,7 @@ section {
 }
 
 /* /mobile view center */
-
+/* 
 @media only screen and (max-width: 600px) {
   .cent {
     text-align: center;
@@ -1499,7 +1499,7 @@ section {
   .portfolio-wrap img {
     content: url('../img/portfolio/logoban.jpeg');
   }
-}
+} */
 
 .flip-card {
   background-color: transparent;
