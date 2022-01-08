@@ -149,7 +149,7 @@ if sys.argv[3] == "pcipant":
           '''
     
     email_mentor = MIMEText(
-            Environment().from_string(text_mentor).render(
+            Environment().from_string(text_pcipant).render(
                 name = sys.argv[2]
             ), "html"
         )

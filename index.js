@@ -202,24 +202,16 @@ app.post('/register-pcipant',(req,res)=>{
      user.save((err,data)=>{
           if(!err){
                console.log("Database Saved Succesfully")
-               
                var dataToSend;
-
-     const python = spawn('python', ['script1.py', formdata.pcipant_email, user.pcipant_name, "pcipant"]);
-     
-     python.stdout.on('data', function (data) {
-     //  console.log('Pipe data from python script ...');
-      dataToSend = data.toString();
-     });
-
-     python.on('close', (code) => {
-     // console.log(`child process close all stdio with code ${code}`);
-     
-     console.log(dataToSend);
-
-     });
-     // console.log("ok")
-     res.render("thankyou")
+               const python = spawn('python', ['script1.py', user.pcipant_email, user.pcipant_name, "pcipant"]);
+               python.stdout.on('data', function (data) {
+               dataToSend = data.toString();
+               console.log("Process spawn")
+               });
+               python.on('close', (code) => {
+                    console.log(dataToSend);
+               });
+               res.render("thankyou")
           }
           else
                console.log(err)    
