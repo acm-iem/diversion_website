@@ -1152,19 +1152,29 @@
                  <img
                    src="projectimg/<%=result.image%>"
                    class="img-fluid"
-                   alt=""
                  />
                  <div class="portfolio-links">
                    <a
                      href="projectimg/<%=result.image%>"
                      data-gallery="portfolioGallery"
                      class="portfolio-lightbox"
-                     title='<%=result.project_nm%> <br> <%=result.project_info%>'
+                     title="<div style='color:#eb5d1e; font-size:20px;'><b><%=result.project_nm%></b></div> <br> <%=result.project_info%> <br> Stacks: 
+                     
+                     <%
+                        result.project_tech.split(',').map((e)=>{
+                     %>
+                          <span class='badge badge-primary'><%=e%></span>
+                     <%   
+                        })
+                     %>
+                     
+                     <br> Github: <a href='<%=result.project_link%>' target='_blank'><%=result.project_link%></a>"
+                     
                      ><i class="bi bi-plus"></i
                    ></a>
-                   <a href="#" title="More Details"
+                   <!-- <a href="#" title="More Details"
                      ><i class="bi bi-link"></i
-                   ></a>
+                   ></a> -->
                  </div>
                  <div class="portfolio-info">
                    <h4><%=result.project_nm%></h4>
