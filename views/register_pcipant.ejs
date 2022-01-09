@@ -7,7 +7,7 @@
     <meta content="DIVERSION is an event organized by ACM-CSI IEM Student Chapter which encourages participants to contribute in open-source. By contributing to an open-source project, participants receive immediate feedback on their development and programming skills." name="description" />
     <meta content="Open-Source,Hackathon,Github,Open-Source event,projects,mentorship,guidance" name="keywords" />
 
-    <title>Register as a Mentor</title>
+    <title>Register as a Participant</title>
     <style>
       .hide{
         visibility: hidden;
@@ -290,12 +290,12 @@
                      href="projectimg/<%=result.image%>"
                      data-gallery="portfolioGallery"
                      class="portfolio-lightbox"
-                     title='<%=result.project_nm%> <br> <%=result.project_info%>'
+                     title="<%=result.project_nm%> <br> <%=result.project_info%> <br> Stacks: <%=result.project_tech%> <br> Github: <a href='<%=result.project_link%>' target='_blank'><%=result.project_link%></a>"
                      ><i class="bi bi-plus"></i
                    ></a>
-                   <a href="#" title="More Details"
+                   <!-- <a href="#" title="More Details"
                      ><i class="bi bi-link"></i
-                   ></a>
+                   ></a> -->
                  </div>
                  <div class="portfolio-info">
                    <h4><%=result.project_nm%></h4>
