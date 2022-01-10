@@ -1703,3 +1703,9 @@ section {
   align-items: center;
   flex-direction: column;
 }
+
+@media only screen and (max-width: 600px) {
+  .flip-card {
+    margin-bottom: 60px;
+  }
+}
