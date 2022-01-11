@@ -1292,11 +1292,19 @@
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <% data.map((result)=>{ if(result.project_category == 'WEB-DEV') sb
-            = 'web'; else if(result.project_category == 'APP-DEV') sb = 'app';
-            else if(result.project_category == 'AI-ML') sb = 'ai'; else
-            if(result.project_category == 'IOT/HARDWARE') sb = 'iot'; else sb =
-            'misc'; if(result.project_status == 'YES'){ %>
+            <% data.map((result)=>{ 
+              if(result.project_category == 'WEB-DEV') 
+                sb = 'web'; 
+              else if(result.project_category == 'APP-DEV')
+               sb = 'app';
+              else if(result.project_category == 'AI-ML')
+               sb = 'ai'; 
+              else if(result.project_category == 'IOT/HARDWARE')
+               sb = 'iot'; 
+              else 
+               sb = 'misc'; 
+              
+              if(result.project_status == 'YES' || result.project_status == 'FULL'){ %>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-<%=sb%>">
               <div class="portfolio-wrap">
