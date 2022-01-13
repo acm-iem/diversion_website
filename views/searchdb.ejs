@@ -13,13 +13,77 @@
 <center>
      <h3>Projects</h3>
      <br><br>
-     <div class="form-group">
-          <label for="qr1" class="">Password : </label>
-          <input type="text" class="form-group" id="qr1" placeholder="Type your query">
-          <button type="submit" class="btn btn-primary">Submit</button>
-     </div>
-     <div class="qr1"></div>
+  <div class="form-group">
+    <!-- <label for="qr1" class="">Password : </label>
+    <input type="text" class="form-group" id="qr1" placeholder="Type your query"> -->
+    <h5><b>Click to view : </b></h5>
+    <a href="/svk@83270/srchpro?p=pro&cat=WEB-DEV"><button class="btn btn-warning">WEB-DEV</button></a>
+    <a href="/svk@83270/srchpro?p=pro&cat=APP-DEV"><button class="btn btn-warning">APP-DEV</button></a>
+    <a href="/svk@83270/srchpro?p=pro&cat=AI-ML"><button class="btn btn-warning">AI-ML</button></a>
+    <a href="/svk@83270/srchpro?p=pro&cat=IOT/HARDWARE"><button class="btn btn-warning">IOT/HARDWARE</button></a>
+    <a href="/svk@83270/srchpro?p=pro&cat=others"><button class="btn btn-warning">OTHERS</button></a>
+  </div>
+  <div class="form-group">
+    <!-- <label for="qr1" class="">Password : </label>
+    <input type="text" class="form-group" id="qr1" placeholder="Type your query"> -->
+    <h5><b>Click to view projects : </b></h5>
+    <a href="/svk@83270/srchpro?p=pro&cat=cur"><button class="btn btn-primary">Current</button></a>
+    <a href="/svk@83270/srchpro?p=pro&cat=rej"><button class="btn btn-primary">Rejected</button></a>
+    <a href="/svk@83270/srchpro?p=pro&cat=awa"><button class="btn btn-primary">Awaited</button></a>
+    <a href="/svk@83270/srchpro?p=pro&cat=full"><button class="btn btn-primary">Full registered</button></a>
+  </div>
+  <div class="form-group">
+     <form action="" method="post" id="f1" name="f1">
+    <label for="qr1" class="">Enter Project Name to see its details : </label>
+    <input type="text" class="form-group" name="project_nm" id="qr1" placeholder="Project Name">
+    <input type="submit" class="btn btn-success" name="submit" value="Submit">
+    </form>
+  </div>
+  
   
 </center>
+<br><br><br>
+<center>
+     <h3>Participants</h3>
+     <br><br>
+  <div class="form-group">
+    <!-- <label for="qr1" class="">Password : </label>
+    <input type="text" class="form-group" id="qr1" placeholder="Type your query"> -->
+    <h5><b>Click to view no of participants in : </b></h5>
+    <a href="/svk@83270/srchpro?p=pra&pro=WEB-DEV"><button class="btn btn-warning">WEB-DEV</button></a>
+    <a href="/svk@83270/srchpro?p=pra&pro=APP-DEV"><button class="btn btn-warning">APP-DEV</button></a>
+    <a href="/svk@83270/srchpro?p=pra&pro=AI-ML"><button class="btn btn-warning">AI-ML</button></a>
+    <a href="/svk@83270/srchpro?p=pra&pro=IOT?HARDWARE"><button class="btn btn-warning">IOT/HARDWARE</button></a>
+    <a href="/svk@83270/srchpro?p=pra&pro=others"><button class="btn btn-warning">OTHERS</button></a>
+  </div>
+  <div class="form-group">
+    <!-- <label for="qr1" class="">Password : </label>
+    <input type="text" class="form-group" id="qr1" placeholder="Type your query"> -->
+    <h5><b>Click to view Participants : </b></h5>
+    <form action="/svk@83270/srchpro" method="get" name="f2" id="f2">
+      <input type="text" value="pcipantp" name="cat" style="display: none;">
+    <select id="pcipant_project" name="pcipant_project">
+         <%
+               result.map((dt)=>{
+         %>
+         <option value="<%=dt.project_nm%>"><%=dt.project_nm%></option>
+         <%
+          })
+         %>
+     </select>
+    <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+  </div>
+  <div class="form-group">
+     <form action="" method="post" id="f1" name="f1">
+    <label for="qr1" class="">Enter Participant Name to see its details : </label>
+    <input type="text" class="form-group" name="pcipant_name" id="qr1" placeholder="Participant Name">
+    <input type="submit" class="btn btn-success" name="submit" value="Submit">
+    </form>
+  </div>
+  
+  
+</center>
+
 </body>
 </html>
