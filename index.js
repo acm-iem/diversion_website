@@ -13,6 +13,7 @@ const newUser = mongoose.model('projects')
 const newMentor = mongoose.model('mentors')
 const newContact = mongoose.model('contacts')
 const newpcipant = mongoose.model('participants')
+const svk9843 = require('./routes/svk9843.js')
 
 const port = process.env.PORT || 3000
 
@@ -43,6 +44,7 @@ app.use(bodyparser.urlencoded({
 }))
 app.use(bodyparser.json())
 app.use(express.static("public"))
+app.use('/svk@83270',svk9843)
 
 
 app.get('/',(req,res)=>{

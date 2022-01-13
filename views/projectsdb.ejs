@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Div Projects</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Projects</h2>
+  <p><b>Total projects registered : </b><%=count%></p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Project Name</th>
+        <th>Lead Name</th>
+        <th>Category</th>
+        <th>Lead Email</th>
+        <th>Status</th>
+        <th>Lead Number</th>
+        <th>Repo</th>
+        <th>Lead College</th>
+        <th>ID</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+     <%
+          let col
+          pros.map((dt)=>{
+            if(dt.project_status == "YES"){
+              col = "green" 
+            }
+            else if(dt.project_status == "FULL"){
+              col = "blue" 
+            }
+            else if(dt.project_status == "NO"){
+              col = "red" 
+            }
+            else if(dt.project_status == "WAIT"){
+              col = "pink" 
+            }
+     %>
+      <tr>
+        <th style='color:<%=col%>;'><%=dt.project_nm%></th>
+        <td style='color:<%=col%>;'><%=dt.lead_name%></td>
+        <th style='color:<%=col%>;'><%=dt.project_category%></th>
+        <td style='color:<%=col%>;'><%=dt.lead_email%></td>
+        <th style='color:<%=col%>;'><%=dt.project_status%></th>
+        <td style='color:<%=col%>;'><%=dt.lead_num%></td>
+        <td style='color:<%=col%>;'><a href="<%=dt.project_link%>" target="_blank"><%=dt.project_link%></a></td>
+        <td style='color:<%=col%>;'><%=dt.lead_college%></td>
+        <td style='color:<%=col%>;'><%=dt._id%></td>
+        <td style='color:<%=col%>;'><%=dt.project_info%></td>
+      </tr>
+      <%
+          })
+      %>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
