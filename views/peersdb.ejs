@@ -12,42 +12,7 @@
 
 <div class="container">
   <h2>Participants</h2>
-  <p><b>Total participants registered : </b><%=count%></p>            
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Project Name</th>
-        <th>Lead Name</th>
-        <th>Category</th>
-        <th>Lead Email</th>
-        <th>Status</th>
-        <th>Lead Number</th>
-        <th>Repo</th>
-        <th>Lead College</th>
-        <th>ID</th>
-      </tr>
-    </thead>
-    <tbody>
-     <%
-          pras.map((dt)=>{
-     %>
-      <tr>
-        <!-- <th><%=dt.pcipant_name%></th> -->
-        <td><%=dt.pcipant_name%></td>
-        <th><%=dt.pcipant_project%></th>
-        <td><%=dt.pcipant_email%></td>
-        <th><%=dt.pcipant_status%></th>
-        <td><%=dt.pcipant_ph_no%></td>
-        <td><%=dt.pcipant_city%></td>
-        <td><%=dt._id%></td>
-        <td><%=dt.pcipant_country%></td>
-        <td><a href="<%=dt.pcipant_github%>" target="_blank"><%=dt.pcipant_github%></a></td>
-      </tr>
-      <%
-          })
-      %>
-    </tbody>
-  </table>
+  <p><b>Total participants registered  in <%=name%>: </b><%=cn%></p>            
 </div>
 
 </body>

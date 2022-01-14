@@ -37,11 +37,9 @@ router.get('/participants',(req,res)=>{
      })
 })
 router.get('/search',(req,res)=>{
-     newUser.find((err,result)=>{
-          if(!err)
-               res.render('searchdb',{result:result})
-          else
-               throw err
+     qr11 = { project_status:"YES" }
+     newUser.find(qr11).then((result)=>{
+          res.render('searchdb',{result:result})
      })
 })
 router.get('/srchpro',(req,res)=>{
@@ -83,7 +81,10 @@ router.get('/srchpro',(req,res)=>{
 })
 
 router.post('/srchpro',(req,res)=>{
-     console.log(req.body)
+     qr4 = { pcipant_project:req.body.pcipant_project }
+     newpcipant.countDocuments(qr4).then((result)=>{
+          res.render("peersdb",{name:req.body.pcipant_project,cn:result})
+     })
 })
 
 router.get('/srchpra',(req,res)=>{
