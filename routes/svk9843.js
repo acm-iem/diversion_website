@@ -57,11 +57,12 @@ router.get('/srchpro',(req,res)=>{
      }
      else if(req.query.p == 'pro')
      {
-          newUser.estimatedDocumentCount((err,n)=>{
-          count = n
+          qr = { project_category:req.query.cat }
+          newUser.countDocuments(qr).then((n)=>{
+               count = n
           // console.log(n)
           })
-          qr = { project_category:req.query.cat }
+          
           newUser.find(qr).then((result)=>{
                res.render("projectsdb",{pros:result,count:count})
           })
