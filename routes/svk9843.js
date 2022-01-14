@@ -46,7 +46,7 @@ router.get('/search',(req,res)=>{
 })
 router.get('/srchpro',(req,res)=>{
 
-     console.log(req.body)
+     console.log(req.body,req.params)
      if(req.body.cat == 'pcipantp'){
           newpcipant.estimatedDocumentCount((err,n)=>{
           count = n
@@ -79,7 +79,13 @@ router.get('/srchpro',(req,res)=>{
      //           res.render("participantsdb",{pras:result,count:count})
      //      })
      // }
+     //db.collectionName.find({"status": "ACTIVE"}).count()
 })
+
+router.post('/srchpro',(req,res)=>{
+     console.log(req.body)
+})
+
 router.get('/srchpra',(req,res)=>{
 
      if(req.query.p == 'pro')
@@ -91,5 +97,9 @@ router.get('/srchpra',(req,res)=>{
           qr = { pcipant_status:req.query.pro }
      }
      // console.log(qr)
+})
+
+router.post('/srpronm',(req,res)=>{
+     console.log(req.body)
 })
 module.exports = router
