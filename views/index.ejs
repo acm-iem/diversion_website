@@ -1185,20 +1185,19 @@
                 data-aos-delay="100"
                 style="text-align: justify"
               >
-                <b>Julia</b> is a high-level, high-performance, dynamic programming
-                language. While it is a general-purpose language and can be used
-                to write any application, many of its features are well suited
-                for numerical analysis and computational science. Distinctive
-                aspects of Julia's design include a type system with parametric
-                polymorphism in a dynamic programming language; with multiple
-                dispatch as its core programming paradigm. Julia takes part in GSOC
+                <b>Julia</b> is a high-level, high-performance, dynamic
+                programming language. While it is a general-purpose language and
+                can be used to write any application, many of its features are
+                well suited for numerical analysis and computational science.
+                Distinctive aspects of Julia's design include a type system with
+                parametric polymorphism in a dynamic programming language; with
+                multiple dispatch as its core programming paradigm. Julia takes
+                part in GSOC
               </p>
               <div>
                 <!-- <div><a href="/register-page" class="btn-get-started scrollto">Register</a></div> -->
                 <center>
-                  <a
-                    href="https://julialang.org"
-                    target="_blank"
+                  <a href="https://julialang.org" target="_blank"
                     ><button
                       type="button"
                       id="mbtn"
@@ -1223,16 +1222,16 @@
                 data-aos-delay="100"
                 style="text-align: justify"
               >
-                <b>naas</b> stands for notebooks as a service.
-                Naas augments Jupyter Notebooks by adding micro-services accessible in 
-                low-code to easily access data, automation, and AI. The product is based 
-                on 3 elements: features, drivers, and templates.The templates enable you 
-                to kickstart projects in minutes. They can include low-code drivers that 
-                act as connectors to facilitate access to tools, and complex libraries 
-                (database, API, ML algorithm...) while the low-code features (scheduling, 
-                asset sharing, notifications...) enable faster iteration and deployment of 
-                outputs to end-users, in a headless way.
-
+                <b>naas</b> stands for notebooks as a service. Naas augments
+                Jupyter Notebooks by adding micro-services accessible in
+                low-code to easily access data, automation, and AI. The product
+                is based on 3 elements: features, drivers, and templates.The
+                templates enable you to kickstart projects in minutes. They can
+                include low-code drivers that act as connectors to facilitate
+                access to tools, and complex libraries (database, API, ML
+                algorithm...) while the low-code features (scheduling, asset
+                sharing, notifications...) enable faster iteration and
+                deployment of outputs to end-users, in a headless way.
               </p>
               <div>
                 <!-- <div><a href="/register-page" class="btn-get-started scrollto">Register</a></div> -->
@@ -1243,7 +1242,7 @@
                       id="mbtn"
                       class="btn btn-warning mx-3 d-flex align-items-center"
                       data-aos="fade-up"
-                      style="border-radius: 1.5rem;"
+                      style="border-radius: 1.5rem"
                     >
                       View on Website
                     </button></a
@@ -1256,7 +1255,7 @@
             >
               <img
                 src="assets/img/clients/naas.png"
-                class="img-fluid"
+                class="img-fluid naas_img"
                 alt=""
                 data-aos="zoom-in"
                 style="height: 100px"
@@ -1276,7 +1275,10 @@
           <div class="row" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-12">
               <ul id="portfolio-flters">
-                <p> Note: All projects are not yet added to the site. Keep rechecking in sometime.</p>
+                <p>
+                  Note: All projects are not yet added to the site. Keep
+                  rechecking in sometime.
+                </p>
                 <li data-filter="*">All</li>
                 <li data-filter=".filter-web" class="filter-active">WEB-DEV</li>
                 <li data-filter=".filter-app">APP-DEV</li>
@@ -1292,19 +1294,12 @@
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <% data.map((result)=>{ 
-              if(result.project_category == 'WEB-DEV') 
-                sb = 'web'; 
-              else if(result.project_category == 'APP-DEV')
-               sb = 'app';
-              else if(result.project_category == 'AI-ML')
-               sb = 'ai'; 
-              else if(result.project_category == 'IOT/HARDWARE')
-               sb = 'iot'; 
-              else 
-               sb = 'misc'; 
-              
-              if(result.project_status == 'YES' || result.project_status == 'FULL'){ %>
+            <% data.map((result)=>{ if(result.project_category == 'WEB-DEV') sb
+            = 'web'; else if(result.project_category == 'APP-DEV') sb = 'app';
+            else if(result.project_category == 'AI-ML') sb = 'ai'; else
+            if(result.project_category == 'IOT/HARDWARE') sb = 'iot'; else sb =
+            'misc'; if(result.project_status == 'YES' || result.project_status
+            == 'FULL'){ %>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-<%=sb%>">
               <div class="portfolio-wrap">
@@ -1343,7 +1338,6 @@
         </div>
       </section>
 
-      
       <!-- ======= Clients Section ======= -->
       <section id="clients" class="clients section-bg">
         <div class="container" data-aos="fade-up">
