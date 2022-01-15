@@ -184,9 +184,10 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
       <div class="container">
-        <div class="row gy-4 cent">
+        <div class="row gy-4 cent" style="background: transparent">
           <div
             class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
+            style="background: transparent"
           >
             <div class="d-flex flex-row xyz" style="margin-bottom: 40px">
               <img
@@ -245,6 +246,15 @@
             />
           </div>
         </div>
+        <!-- <div class="video-background">
+          <div class="video-foreground">
+            <iframe
+              src="https://www.youtube.com/embed/dBveXKcE4SA?autoplay=1&mute=1&controls=0&rel=0"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div> -->
       </div>
     </section>
     <!-- End Hero -->
@@ -293,6 +303,22 @@
         </div>
       </div>
     </div>
+
+    <!-- <section>
+      <div class="video-background">
+        <div class="video-foreground container">
+          <iframe
+            width="100%"
+            height="800px"
+            src="https://www.youtube.com/embed/dBveXKcE4SA?autoplay=1&mute=1&controls=0&rel=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section> -->
 
     <!-- modal end -->
     <main id="main">
@@ -358,6 +384,15 @@
             </div>
           </div>
         </div>
+        <!-- <iframe
+          width="100%"
+          height="800px"
+          src="https://www.youtube.com/embed/dBveXKcE4SA?autoplay=1&mute=1&controls=0&rel=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe> -->
       </section>
       <!-- End About Section -->
 
@@ -1294,9 +1329,10 @@
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <% data.slice(0).reverse().map((result)=>{ if(result.project_category == 'WEB-DEV') sb
-            = 'web'; else if(result.project_category == 'APP-DEV') sb = 'app';
-            else if(result.project_category == 'AI-ML') sb = 'ai'; else
+            <% data.slice(0).reverse().map((result)=>{
+            if(result.project_category == 'WEB-DEV') sb = 'web'; else
+            if(result.project_category == 'APP-DEV') sb = 'app'; else
+            if(result.project_category == 'AI-ML') sb = 'ai'; else
             if(result.project_category == 'IOT/HARDWARE') sb = 'iot'; else sb =
             'misc'; if(result.project_status == 'YES' || result.project_status
             == 'FULL'){ %>
