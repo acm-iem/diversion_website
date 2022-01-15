@@ -267,7 +267,7 @@
           id="irs"
         >
             <%  
-              data.map((result)=>{
+              data.slice(0).reverse().map((result)=>{
                 
                 if(result.project_status == 'FULL')
                   sb ='full';
