@@ -17,6 +17,7 @@ const newPcipantSchema = new mongoose.Schema({
      pcipant_linkedin:String,
      pcipant_github:String,
      pcipant_twitter:String,
+     pcipant_college:String,
      image:String,
      date:Date
 })

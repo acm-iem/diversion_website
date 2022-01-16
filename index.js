@@ -198,6 +198,7 @@ app.post('/register-pcipant',(req,res)=>{
      user.pcipant_linkedin = formdata.pcipant_linkedin
      user.pcipant_github = formdata.pcipant_github
      user.pcipant_twitter = formdata.pcipant_twitter
+     user.pcipant_college = formdata.pcipant_college
      user.date = Date.now()
      
 

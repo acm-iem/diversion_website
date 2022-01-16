@@ -16,15 +16,15 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Project Name</th>
+        <th>Participant</th>
         <th>Lead Name</th>
-        <th>Category</th>
-        <th>Lead Email</th>
+        <th>Email</th>
         <th>Status</th>
-        <th>Lead Number</th>
-        <th>Repo</th>
-        <th>Lead College</th>
+        <th>Ph No</th>
+        <th>City</th>
         <th>ID</th>
+        <th>College</th>
+        <th>Github</th>
       </tr>
     </thead>
     <tbody>
@@ -40,8 +40,10 @@
         <td><%=dt.pcipant_ph_no%></td>
         <td><%=dt.pcipant_city%></td>
         <td><%=dt._id%></td>
+        <td><%=dt.pcipant_college%></td>
         <td><%=dt.pcipant_country%></td>
         <td><a href="<%=dt.pcipant_github%>" target="_blank"><%=dt.pcipant_github%></a></td>
+         <td><a href="<%=dt.pcipant_linkedin%>" target="_blank"><%=dt.pcipant_linkedin%></a></td>
       </tr>
       <%
           })
