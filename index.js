@@ -54,9 +54,9 @@ app.get('/',(req,res)=>{
           res.render('index',{data:data})
      })
 })
-app.get('/register-page',(req,res)=>{
-     res.render('register')
-})
+// app.get('/register-page',(req,res)=>{
+//      res.render('register')
+// })
 
 app.get('/portfolio-details',(req,res)=>{
      res.render('portfolio-details')
