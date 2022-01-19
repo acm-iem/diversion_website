@@ -12,7 +12,8 @@
 
 <div>
   <h2>Participants</h2>
-  <p><b>Total participants registered : </b><%=count%></p>            
+  <p><b>Total participants registered : </b><%=count%></p>
+  <p><a href="/">Home</a></p>            
   <table class="table table-hover">
     <thead>
       <tr>
@@ -24,12 +25,14 @@
         <th>City</th>
         <th>ID</th>
         <th>College</th>
+        <th>Country</th>
         <th>Github</th>
+        <th>Linkedin</th>
       </tr>
     </thead>
     <tbody>
      <%
-          pras.map((dt)=>{
+          pras.slice(0).reverse().map((dt)=>{
      %>
       <tr>
         <!-- <th><%=dt.pcipant_name%></th> -->

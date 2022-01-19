@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const path = require('path')
 const session = require('express-session')
 
+
 const newUser = mongoose.model('projects')
 const newMentor = mongoose.model('mentors')
 const newContact = mongoose.model('contacts')
@@ -24,15 +25,28 @@ router.use(session({
 
 key = '@no#network09'
 
-router.get('/queries',(req,res)=>{
-     
-     if(req.session.ky == key){
+router.get('/',(req,res)=>{
+     res.render("login",{data:'1'})
+     req.session.destroy()
+})
+
+router.post('/',(req,res)=>{
+     code = req.body.cd
+     if(code == key){
+          req.session.ky = code
+          req.session.save()
+          res.render("cp")
+     }
+     else if(code == "kuper@123"){
+          req.session.ky = code
+          req.session.save()
           newContact.find((err,result)=>{
-               res.render('contactsdb',{data:result})
+               res.render("contactsdb",{data:result})
           })
      }
      else{
-          res.redirect('/onwer/')
+          req.session.ky = ""
+          res.render("login",{data:'0'})
      }
 })
 
@@ -40,6 +54,5 @@ router.use((req,res)=>{
      res.session.ky = ""
      res.status(404).render("404page")
 })
-
 
 module.exports = router

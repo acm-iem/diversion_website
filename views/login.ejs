@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>LOG IN</title>
+     
+</head>
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="assets/css/style2.css">
+
+
+<body>
+
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    
+    <div class="fadeIn first">
+      <img src="assets/img/img.webp" id="icon" alt="User Icon">
+    </div>
+    <div id ="w123">
+      <%
+          if (data=='0'){
+     %>
+          <h6 style="color: red;">Wrong Password</h6>
+     <%
+          }
+      %>
+    </div>
+    <form name="f1" id="f1" method="post" action="/onwer/">
+      <input type="password" id="cd" class="fadeIn third" name="cd" placeholder="Enter the Code given to you">
+      <input type="submit" class="fadeIn fourth" id="submit" value="Log In">
+          <div id="formFooter">
+               <a class="underlineHover" href="/">Home</a>
+          </div>
+    </form>
+
+  </div>
+</div>
+</body>
+</html>

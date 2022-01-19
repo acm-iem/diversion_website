@@ -8,19 +8,27 @@ const multer = require('multer')
 const path = require('path')
 const hbs = require('nodemailer-express-handlebars')
 const {spawn} = require('child_process')
+const session = require('express-session')
 
 const newUser = mongoose.model('projects')
 const newMentor = mongoose.model('mentors')
 const newContact = mongoose.model('contacts')
 const newpcipant = mongoose.model('participants')
 const svk9843 = require('./routes/svk9843.js')
-const svk123 = require('./routes/svk123')
+const svk123 = require('./routes/svk123.js')
+const svk0978 = require('./routes/svk0978.js')
 
 const port = process.env.PORT || 3000
 
 ad_mail = 'diversioniem@outlook.com'
 ad_password = 'souvik@nonetwork666'
 
+
+app.use(session({
+     secret:'#098@ytr',
+     saveUninitialized:true,
+     resave: false
+}))
 // async:true
 
 
@@ -45,8 +53,10 @@ app.use(bodyparser.urlencoded({
 }))
 app.use(bodyparser.json())
 app.use(express.static("public"))
+
 app.use('/svk@83270',svk9843)
 app.use('/svk@123',svk123)
+app.use('/onwer',svk0978)
 
 
 app.get('/',(req,res)=>{
@@ -287,6 +297,10 @@ app.post('/prs',(req,res)=>{
           })
           res.send(s)
      })
+})
+
+app.use((req,res)=>{
+     res.status(404).render("404page")
 })
 
 app.listen(port,()=>{
