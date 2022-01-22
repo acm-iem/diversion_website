@@ -217,14 +217,14 @@ app.post('/register-pcipant',(req,res)=>{
      user.save((err,data)=>{
           if(!err){
                console.log("Database Saved Succesfully")
-               var dataToSend;
+               let dataToSend;
                const python = spawn('python', ['script1.py', user.pcipant_email, user.pcipant_name, "pcipant"]);
                python.stdout.on('data', function (data) {
-               dataToSend = data.toString();
-               console.log("Process spawn")
+                    dataToSend = data.toString();
+                    console.log("Process spawn")
                });
                python.on('close', (code) => {
-                    console.log(dataToSend);
+                    console.log("process closed");
                });
                res.render("thankyou")
           }
