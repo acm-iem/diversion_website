@@ -119,7 +119,7 @@ app.post('/register',upload.single('image'),(req,res)=>{
                console.log("Database Saved Succesfully")
                
                var dataToSend;
-               const python = spawn('python', ['script1.py', formdata.lead_email, user.lead_name, "lead"]);
+               const python = spawn('python3', ['script1.py', formdata.lead_email, user.lead_name, "lead"]);
                python.stdout.on('data', function (data) {
                 dataToSend = data.toString();
                });
@@ -168,7 +168,7 @@ app.post('/register-mentor',upload.single('image'),(req,res)=>{
                
                var dataToSend;
 
-     const python = spawn('python', ['script1.py', formdata.mentor_email, user.mentor_name, "mentor"]);
+     const python = spawn('python3', ['script1.py', formdata.mentor_email, user.mentor_name, "mentor"]);
      
      python.stdout.on('data', function (data) {
      //  console.log('Pipe data from python script ...');
@@ -218,7 +218,7 @@ app.post('/register-pcipant',(req,res)=>{
           if(!err){
                console.log("Database Saved Succesfully")
                let dataToSend;
-               const python = spawn('python', ['script1.py', user.pcipant_email, user.pcipant_name, "pcipant"]);
+               const python = spawn('python3', ['script1.py', user.pcipant_email, user.pcipant_name, "pcipant"]);
                python.stdout.on('data', function (data) {
                     dataToSend = data.toString();
                     console.log("Process spawn")
