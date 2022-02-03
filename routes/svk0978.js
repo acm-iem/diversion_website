@@ -10,6 +10,7 @@ const newUser = mongoose.model('projects')
 const newMentor = mongoose.model('mentors')
 const newContact = mongoose.model('contacts')
 const newpcipant = mongoose.model('participants')
+const newip = mongoose.model('ips')
 
 router.use(express.static("public"))
 router.use(bodyparser.urlencoded({
@@ -26,6 +27,11 @@ router.use(session({
 key = '@no#network09'
 
 router.get('/',(req,res)=>{
+     const ipo = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+     const nip = new newip()
+     nip.ip = ipo
+     nip.date = Date.now()
+     nip.save()
      res.render("login",{data:'1'})
      req.session.destroy()
 })
