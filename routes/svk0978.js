@@ -29,7 +29,6 @@ router.get('/',(req,res)=>{
      res.render("login",{data:'1'})
      req.session.destroy()
 })
-
 router.post('/',(req,res)=>{
      code = req.body.cd
      if(code == key){

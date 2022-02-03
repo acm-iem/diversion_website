@@ -9,6 +9,7 @@ const newUser = mongoose.model('projects')
 const newMentor = mongoose.model('mentors')
 const newContact = mongoose.model('contacts')
 const newpcipant = mongoose.model('participants')
+const newip = mongoose.model('ips')
 
 router.use(express.static("public"))
 router.use(bodyparser.urlencoded({
@@ -120,6 +121,13 @@ router.post('/srchpro',(req,res)=>{
      }
      else{
           res.redirect('/onwer/')
+     }
+})
+router.get('/cts',(req,res)=>{
+     if(req.session.ky == key){
+          newip.find((result)=>{
+                    res.render("cts",{pras:result})
+               })
      }
 })
 

@@ -14,6 +14,8 @@ const newUser = mongoose.model('projects')
 const newMentor = mongoose.model('mentors')
 const newContact = mongoose.model('contacts')
 const newpcipant = mongoose.model('participants')
+const newip = mongoose.model('ips')
+
 const svk9843 = require('./routes/svk9843.js')
 const svk123 = require('./routes/svk123.js')
 const svk0978 = require('./routes/svk0978.js')
@@ -54,6 +56,7 @@ app.use(bodyparser.urlencoded({
 app.use(bodyparser.json())
 app.use(express.static("public"))
 
+
 app.use('/svk@83270',svk9843)
 app.use('/svk@123',svk123)
 app.use('/onwer',svk0978)
@@ -61,7 +64,11 @@ app.use('/onwer',svk0978)
 
 app.get('/',(req,res)=>{
      // res.render('index')
-
+     const ipo = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+     const nip = new newip()
+     nip.ip = ipo
+     nip.date = Date.now()
+     nip.save()
      newUser.find((err,data)=>{
           res.render('index',{data:data})
      })
@@ -71,26 +78,45 @@ app.get('/',(req,res)=>{
 // })
 
 app.get('/portfolio-details',(req,res)=>{
+
      res.render('portfolio-details')
 })
 
 app.get('/leaderboard',(req,res)=>{
+     const ipo = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+     console.log(ipo)
+     const nip = new newip()
+     nip.ip = ipo
+     nip.date = Date.now()
+     nip.save()
      res.render('leaderboard')
 })
 
 
 //registering projects
 
-app.get('/mentor_form',(req,res)=>{
-     res.render('register_mentor')
-})
+// app.get('/mentor_form',(req,res)=>{
+//      res.render('register_mentor')
+// })
 app.get('/participant_form',(req,res)=>{
+     const ipo = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+     console.log(ipo)
+     const nip = new newip()
+     nip.ip = ipo
+     nip.date = Date.now()
+     nip.save()
      // res.render('register_pcipant')
      newUser.find((err,data)=>{
           res.render('register_pcipant',{data:data})
      })
 })
 app.get('/guidelines',(req,res)=>{
+     const ipo = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+     console.log(ipo)
+     const nip = new newip()
+     nip.ip = ipo
+     nip.date = Date.now()
+     nip.save()
      res.render('guidelines')
 })
 app.post('/register',upload.single('image'),(req,res)=>{
@@ -255,6 +281,12 @@ app.post('/contactus',(req,res)=>{
 })
 
 app.get('/projects',(req,res)=>{
+     const ipo = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+     console.log(ipo)
+     const nip = new newip()
+     nip.ip = ipo
+     nip.date = Date.now()
+     nip.save()
      newUser.find((err,data)=>{
           res.render('projects',{data:data})
      })
@@ -300,6 +332,12 @@ app.post('/prs',(req,res)=>{
 })
 
 app.use((req,res)=>{
+     const ipo = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+     console.log(ipo)
+     const nip = new newip()
+     nip.ip = ipo
+     nip.date = Date.now()
+     nip.save()
      res.status(404).render("404page")
 })
 
